@@ -1,3 +1,5 @@
+'use client'
+import { motion } from 'motion/react'
 import Link from "next/link";
 
 export default function HomeAbout() {
@@ -12,15 +14,29 @@ export default function HomeAbout() {
                 </div>
 
                 {/* Name */}
-                <h1 className='text-3xl font-semibold mt-4 flex flex-col lg:flex-row lg:gap-2'>
-                    <span className='text-letter-white'>Wong</span>
-                    <span className='text-letter-yellow'>Weng Ti</span>
-                </h1>
+                <motion.div
+                    initial={{ opacity: 0, y: 25 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1 }}
+                >
+                    <h1 className='text-3xl font-semibold mt-4 flex flex-col lg:flex-row lg:gap-2'>
+                        <span className='text-letter-white'>Wong</span>
+                        <span className='text-letter-yellow'>Weng Ti</span>
+                    </h1>
+                </motion.div>
 
                 {/* Short Description */}
-                <p className='text-sm mt-2'>
-                    EEE grad pivoting into full-stack web development. Buildring real products with React, Next.js & Supabase.
-                </p>
+                <motion.div
+                    initial={{ opacity: 0, y: 25 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.2 }}
+                >
+                    <p className='text-sm mt-2'>
+                        EEE grad pivoting into full-stack web development. Buildring real products with React, Next.js & Supabase.
+                    </p>
+                </motion.div>
+
+
             </div>
 
             {/* Button Group */}
