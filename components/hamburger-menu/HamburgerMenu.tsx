@@ -3,6 +3,7 @@
 import { RxHamburgerMenu } from "react-icons/rx"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../tailgrids/core/dropdown"
 import { usePathname } from "next/navigation"
+import Link from "next/link"
 
 export default function HamburgerMenu() {
 
@@ -33,7 +34,9 @@ export default function HamburgerMenu() {
                 </DropdownMenuItem>
 
                 <DropdownMenuItem className={`${generalClsName}`}>
-                    Download CV
+                    <Link href='https://drive.google.com/drive/folders/1wW6CfjJ3K_bTFNeFafgp9Aup87z3yCFm?usp=sharing'>
+                        Download CV
+                    </Link>
                 </DropdownMenuItem>
 
             </DropdownMenuContent>

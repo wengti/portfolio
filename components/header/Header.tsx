@@ -35,7 +35,9 @@ export default function Header() {
                 </div>
 
                 <li className='hidden md:block border border-edge-white font-extrabold py-2 px-4 rounded-xl text-letter-white'>
-                    Download CV
+                    <Link href='https://drive.google.com/drive/folders/1wW6CfjJ3K_bTFNeFafgp9Aup87z3yCFm?usp=sharing'>
+                        Download CV
+                    </Link>
                 </li>
 
                 <li className='md:hidden'>
