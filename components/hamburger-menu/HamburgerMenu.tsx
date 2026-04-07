@@ -34,7 +34,7 @@ export default function HamburgerMenu() {
                 </DropdownMenuItem>
 
                 <DropdownMenuItem className={`${generalClsName}`}>
-                    <Link href='https://drive.google.com/drive/folders/1wW6CfjJ3K_bTFNeFafgp9Aup87z3yCFm?usp=sharing'>
+                    <Link href='https://drive.google.com/drive/folders/1wW6CfjJ3K_bTFNeFafgp9Aup87z3yCFm?usp=sharing' target='_blank'>
                         Download CV
                     </Link>
                 </DropdownMenuItem>
