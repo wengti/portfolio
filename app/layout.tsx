@@ -12,8 +12,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <html lang="en" className={`${inter.className} h-full antialiased`}>
             <body className="min-h-full flex flex-col bg-background-black text-letter-gray">
                 <Header />
-                {children}
-            </body>
+                
+                <main>
+                    {children}
+                </main>
+        </body>
         </html >
     );
 }
