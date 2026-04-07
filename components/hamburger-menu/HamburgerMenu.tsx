@@ -1,12 +1,11 @@
 'use client'
-
 import { RxHamburgerMenu } from "react-icons/rx"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../tailgrids/core/dropdown"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
 
 export default function HamburgerMenu() {
-    
+
     /* General Class Name for all hamburger menu item */
     const generalClsName = 'cursor-pointer hover:bg-edge-gray rounded-lg'
 
@@ -21,8 +20,9 @@ export default function HamburgerMenu() {
 
             {/* Hamburger Menu Icon */}
             <DropdownMenuTrigger className='flex items-center'>
-                <RxHamburgerMenu className=' text-letter-white text-2xl'/>
+                <RxHamburgerMenu className=' text-letter-white text-2xl' />
             </DropdownMenuTrigger>
+
 
             <DropdownMenuContent className='bg-card-black border-2 border-edge-gray rounded-lg cursor-pointer p-1 text-letter-white'>
                 {/* Home */}
@@ -48,6 +48,7 @@ export default function HamburgerMenu() {
                 </DropdownMenuItem>
 
             </DropdownMenuContent>
+
         </DropdownMenu>
     )
 }

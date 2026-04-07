@@ -40,7 +40,12 @@ export default function HomeAbout() {
             </div>
 
             {/* Button Group */}
-            <div className='mt-6 text-xl flex justify-center items-end gap-4 lg:w-2/7 lg:mt-0'>
+            <motion.div
+                className='mt-6 text-xl flex justify-center items-end gap-4 lg:w-2/7 lg:mt-0'
+                initial={{ opacity: 0, y: 25 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+            >
                 <button className='text-letter-white font-semibold border border-edge-white rounded-md py-2 w-3/7 lg:h-fit'>
                     View <br /> Projects
                 </button>
@@ -49,7 +54,8 @@ export default function HomeAbout() {
                         Download <br /> CV
                     </Link>
                 </button>
-            </div>
+            </motion.div>
+
 
         </section>
     )
