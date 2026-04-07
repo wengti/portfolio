@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function HomeAbout(){
 
     return (
@@ -25,7 +27,9 @@ export default function HomeAbout(){
                     View <br/> Projects
                 </button>
                 <button className='text-letter-white font-semibold border border-edge-white rounded-md py-2 w-3/7'>
-                    Download <br/> CV
+                    <Link href='https://drive.google.com/drive/folders/1wW6CfjJ3K_bTFNeFafgp9Aup87z3yCFm?usp=sharing' target='_blank'>
+                        Download <br/> CV
+                    </Link>
                 </button>
             </div>
 
