@@ -13,7 +13,7 @@ export default function HomeProjects() {
                 <h2 className='text-letter-yellow font-bold text-lg'>
                     FEATURED PROJECTS
                 </h2>
-                <p className='underline text-xs md:text-sm self-end mr-2 cursor-pointer'>
+                <p className='underline text-xs md:text-sm self-end mr-2 cursor-pointer text-letter-yellow'>
                     See All
                 </p>
             </div>
