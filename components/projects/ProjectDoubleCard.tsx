@@ -10,7 +10,7 @@ export default function ProjectsDoubleCard({data, isShownOnLargeScreen}: {data: 
     return (
         <motion.div
             key={data.name}
-            className={`hidden flex-col col-span-2 gap-2 bg-card-black py-2 border-2 border-edge-yellow rounded-2xl ${shownCls}`}
+            className={`hidden flex-col col-span-2 gap-2 bg-card-black py-2 border-2 border-edge-yellow rounded-2xl min-h-125 ${shownCls}`}
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.25 }}
