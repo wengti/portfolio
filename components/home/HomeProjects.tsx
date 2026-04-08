@@ -14,8 +14,8 @@ export default function HomeProjects() {
                 <h2 className='text-letter-yellow font-bold text-lg'>
                     FEATURED PROJECTS
                 </h2>
-                <Link href='/projects'>
-                    <p className='underline text-xs md:text-sm self-end mr-2 cursor-pointer text-letter-yellow'>
+                <Link href='/projects' className='self-end'>
+                    <p className='underline text-xs md:text-sm mr-2 cursor-pointer text-letter-yellow'>
                         See All
                     </p>
                 </Link>
