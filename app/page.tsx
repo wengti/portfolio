@@ -1,4 +1,5 @@
 import HomeAbout from "@/components/home/HomeAbout";
+import HomeProjects from "@/components/home/HomeProjects";
 
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
         <>
 
             <HomeAbout />
+            <HomeProjects />
         </>
         
 

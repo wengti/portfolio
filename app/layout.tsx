@@ -13,7 +13,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <body className="min-h-full flex flex-col bg-background-black text-letter-gray">
                 <Header />
                 
-                <main>
+                <main className='mb-12'>
                     {children}
                 </main>
         </body>

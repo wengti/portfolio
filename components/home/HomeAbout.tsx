@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function HomeAbout() {
 
     return (
-        <section className='px-6 pt-12 pb-10 border-b border-edge-gray lg:flex lg:gap-2'>
+        <section className='px-6 pt-12 pb-10 lg:flex lg:gap-2'>
 
             <div className='grow'>
                 {/* Badge */}
