@@ -3,7 +3,7 @@ import { projectsData } from "@/data/projects";
 import Image from "next/image";
 import { motion } from 'motion/react'
 import Link from "next/link";
-import ProjectsGrid from "./HomeProjectsGrid";
+import HomeProjectsGrid from "./HomeProjectsGrid";
 
 export default function HomeProjects() {
 
@@ -22,7 +22,7 @@ export default function HomeProjects() {
                 </Link>
             </div>
 
-            <ProjectsGrid projectsData={projectsData.slice(0,4)} isLastItemHidden={true}/>
+            <HomeProjectsGrid projectsData={projectsData.slice(0,4)} isLastItemHidden={true}/>
         </section>
     )
 }

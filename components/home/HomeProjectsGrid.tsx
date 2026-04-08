@@ -11,7 +11,7 @@ type ProjectsDataType = {
 }[]
 
 
-export default function ProjectsGrid({ projectsData, isLastItemHidden }: { projectsData: ProjectsDataType, isLastItemHidden: boolean }) {
+export default function HomeProjectsGrid({ projectsData, isLastItemHidden }: { projectsData: ProjectsDataType, isLastItemHidden: boolean }) {
     return (
         /* Grid Area */
         < div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 content-center max-w-400 mx-auto" >
@@ -20,7 +20,7 @@ export default function ProjectsGrid({ projectsData, isLastItemHidden }: { proje
             {
                 projectsData.map((data, idx) => {
 
-                    const extraClsName = (idx === projectsData.length-1 && isLastItemHidden) ? 'hidden sm:flex lg:hidden' : ''
+                    const extraClsName = (idx === projectsData.length - 1 && isLastItemHidden) ? 'hidden sm:flex lg:hidden' : ''
 
                     return (
                         <motion.div
