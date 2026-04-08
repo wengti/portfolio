@@ -32,7 +32,7 @@ export default function ContactForm() {
             >
 
                 {/* Name and Email */}
-                <div className='flex flex-col gap-4 sm:flex-row w-full'>
+                <div className='flex flex-col gap-4 sm:flex-row'>
                     <ContactTextInput
                         label='Name'
                         placeholder='John'
@@ -50,7 +50,7 @@ export default function ContactForm() {
                 />
 
                 {/* Submit Button */}
-                <button className='bg-background-black p-2 rounded-lg border border-edge-gray text-letter-white font-semibold flex gap-2 justify-center items-center w-3/7 mx-auto'>
+                <button className='bg-background-black p-2 rounded-lg border border-edge-gray text-letter-white font-semibold flex gap-2 justify-center items-center min-w-50 w-3/7 mx-auto'>
                     <p>Send Message</p>
                     <IoMdSend />
                 </button>
