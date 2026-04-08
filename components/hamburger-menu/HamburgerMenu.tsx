@@ -27,17 +27,23 @@ export default function HamburgerMenu() {
             <DropdownMenuContent className='bg-card-black border-2 border-edge-gray rounded-lg cursor-pointer p-1 text-letter-white'>
                 {/* Home */}
                 <DropdownMenuItem className={`${generalClsName} ${homeClsName}`}>
-                    Home
+                    <Link href='/'>
+                        Home
+                    </Link>
                 </DropdownMenuItem>
 
                 {/* Projects */}
                 <DropdownMenuItem className={`${generalClsName} ${projectsClsName}`}>
-                    Projects
+                    <Link href='/projects'>
+                        Projects
+                    </Link>
                 </DropdownMenuItem>
 
                 {/* Contact */}
                 <DropdownMenuItem className={`${generalClsName} ${contactsClsName}`}>
-                    Contact
+                    <Link href='/contact'>
+                        Contact
+                    </Link>
                 </DropdownMenuItem>
 
                 {/* Download CV */}
