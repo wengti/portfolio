@@ -27,28 +27,28 @@ export default function HamburgerMenu() {
             <DropdownMenuContent className='bg-card-black border-2 border-edge-gray rounded-lg cursor-pointer p-1 text-letter-white'>
                 {/* Home */}
                 <DropdownMenuItem className={`${generalClsName} ${homeClsName}`}>
-                    <Link href='/'>
+                    <Link href='/' className='w-full'>
                         Home
                     </Link>
                 </DropdownMenuItem>
 
                 {/* Projects */}
                 <DropdownMenuItem className={`${generalClsName} ${projectsClsName}`}>
-                    <Link href='/projects'>
+                    <Link href='/projects' className='w-full'>
                         Projects
                     </Link>
                 </DropdownMenuItem>
 
                 {/* Contact */}
                 <DropdownMenuItem className={`${generalClsName} ${contactsClsName}`}>
-                    <Link href='/contact'>
+                    <Link href='/contact' className='w-full'>
                         Contact
                     </Link>
                 </DropdownMenuItem>
 
                 {/* Download CV */}
                 <DropdownMenuItem className={`${generalClsName}`}>
-                    <Link href='https://drive.google.com/drive/folders/1wW6CfjJ3K_bTFNeFafgp9Aup87z3yCFm?usp=sharing' target='_blank'>
+                    <Link href='https://drive.google.com/drive/folders/1wW6CfjJ3K_bTFNeFafgp9Aup87z3yCFm?usp=sharing' target='_blank'  className='w-full'>
                         Download CV
                     </Link>
                 </DropdownMenuItem>
