@@ -15,7 +15,9 @@ export default function Home() {
                 <HomeTech />
                 <HomeTimeline />
             </div>
-            <ContactForm />
+            <div className='mb-12'>
+                <ContactForm />
+            </div>
         </>
         
 
