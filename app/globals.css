@@ -506,3 +506,35 @@
   }
 }
 
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: none; /* Often necessary for browsers like Chrome */
+}
+
+/* Modern Standard (Firefox) */
+* {
+  scrollbar-width: thin;          /* Options: auto, thin, none */
+  scrollbar-color: whitesmoke transparent;  /* thumb color | track color */
+}
+
+/* WebKit Browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px;               /* Width of the vertical scrollbar */
+  height: 10px;              /* Height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;       /* Color of the track (background) */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;          /* Color of the draggable thumb */
+  border-radius: 10px;
+  border: 2px solid #f1f1f1; /* Creates "padding" around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;          /* Color when hovering */
+}
