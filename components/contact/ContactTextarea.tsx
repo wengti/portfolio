@@ -1,4 +1,14 @@
-export default function ContactTextarea({label, placeholder}: {label: string, placeholder: string}){
+import { Dispatch, SetStateAction } from "react";
+
+type ContactTextareaPropsType = {
+    label: string, 
+    placeholder: string, 
+    value: string, 
+    valueSetter: Dispatch<SetStateAction<string>>,
+    isPending: boolean
+}
+
+export default function ContactTextarea({label, placeholder, value, valueSetter, isPending}: ContactTextareaPropsType){
 
     return (
         <div className='flex flex-col gap-1'>
@@ -9,7 +19,11 @@ export default function ContactTextarea({label, placeholder}: {label: string, pl
                 id={label}
                 name={label}
                 placeholder={placeholder}
+                value={value}
+                onChange={(event) => valueSetter(event.target.value)}
                 className='bg-form-gray border border-edge-gray rounded-lg text-letter-white placeholder-letter-mute2 p-2 resize-none h-40'
+                disabled={isPending}
+                required
             />
         </div>
     )
