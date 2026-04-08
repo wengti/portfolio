@@ -1,6 +1,7 @@
+'use client'
 import { projectsData } from "@/data/projects";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../tailgrids/core/carousel";
 import Image from "next/image";
+import { motion } from 'motion/react'
 
 export default function HomeProjects() {
 
@@ -22,9 +23,16 @@ export default function HomeProjects() {
 
                 {/* Individual Project Card */}
                 {
-                    projectsData.map(data => {
+                    projectsData.map((data, idx) => {
                         return (
-                            <div className='flex flex-col gap-2 bg-card-black py-2 border-2 border-edge-yellow rounded-2xl' key={data.name}>
+                            <motion.div
+                                key={data.name}
+                                className='flex flex-col gap-2 bg-card-black py-2 border-2 border-edge-yellow rounded-2xl'
+                                initial={{ opacity: 0, y: 25 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1, delay: 0.25 * idx }}
+                                viewport={{ once: true }}
+                            >
 
                                 {/* Cover Image for each project */}
                                 <div>
@@ -58,7 +66,7 @@ export default function HomeProjects() {
                                         {data.description}
                                     </p>
                                 </div>
-                            </div>
+                            </motion.div>
 
                         )
                     })
