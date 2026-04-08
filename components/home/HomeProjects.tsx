@@ -54,7 +54,7 @@ export default function HomeProjects() {
                                             )
                                         }
                                     </div>
-                                    <p className='leading-5 text-sm'>
+                                    <p className='leading-6 text-base mt-2'>
                                         {data.description}
                                     </p>
                                 </div>
