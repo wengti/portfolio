@@ -8,9 +8,9 @@ export default function Header() {
 
     /* Getting Pathname to make current active page in yellow in header */
     const pathname = usePathname()
-    const homeClsName = pathname === '/' ? 'text-letter-yellow cursor-pointer' : 'cursor-pointer'
-    const projectsClsName = pathname.startsWith('/projects') ? 'text-letter-yellow cursor-pointer' : 'cursor-pointer'
-    const contactsClsName = pathname.startsWith('/contacts') ? 'text-letter-yellow cursor-pointer' : 'cursor-pointer'
+    const homeClsName = pathname === '/' ? 'text-letter-yellow cursor-pointer hover:text-letter-yellow' : 'cursor-pointer hover:text-letter-yellow'
+    const projectsClsName = pathname.startsWith('/projects') ? 'text-letter-yellow cursor-pointer hover:text-letter-yellow' : 'cursor-pointer hover:text-letter-yellow'
+    const contactsClsName = pathname.startsWith('/contact') ? 'text-letter-yellow cursor-pointer hover:text-letter-yellow' : 'cursor-pointer hover:text-letter-yellow'
 
     return (
         <header className='py-4 px-6 border-b border-edge-gray h-17'>
@@ -26,17 +26,23 @@ export default function Header() {
                 <div className='gap-6 hidden md:flex'>
                     {/* Home */}
                     <li className={`${homeClsName}`}>
-                        Home
+                        <Link href='/'>
+                            Home
+                        </Link>
                     </li>
 
                     {/* Projects */}
                     <li className={`${projectsClsName}`}>
-                        Projects
+                        <Link href='/projects'>
+                            Projects
+                        </Link>
                     </li>
 
                     {/* Contacts */}
                     <li className={`${contactsClsName}`}>
-                        Contacts
+                        <Link href='/contact'>
+                            Contact
+                        </Link>
                     </li>
                 </div>
 
