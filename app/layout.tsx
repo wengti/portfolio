@@ -14,7 +14,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <body className="min-h-full flex flex-col bg-background-black text-letter-gray">
                 <Header />
                 
-                <main className='mb-12'>
+                <main className='min-h-[calc(100vh-136px)] flex flex-col'> {/* main has a min height of 100vh minus the height of header and footer */}
                     {children}
                 </main>
 
