@@ -21,7 +21,7 @@ export default function HomeTimeline() {
                         }
 
                         return (
-                            <div className=''>
+                            <div className='' key={idx}>
 
                                 {/* div for time */}
                                 <div className='flex gap-2 items-center'>
