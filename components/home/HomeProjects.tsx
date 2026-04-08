@@ -10,7 +10,7 @@ export default function HomeProjects() {
             {/* Heading of the section */}
             <div className='flex justify-between'>
                 <h2 className='text-letter-yellow font-bold text-lg'>
-                    Featured Projects
+                    FEATURED PROJECTS
                 </h2>
                 <p className='underline text-xs md:text-sm self-end mr-2 cursor-pointer'>
                     See All
