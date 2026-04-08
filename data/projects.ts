@@ -23,4 +23,12 @@ export const projectsData = [
         description: 'A research project that succeed in achieving cost-effective fault detection using drone RGB imagery with modified YOLO deep learning algorithm. Published in IEEE GECOST & JESTEC with multiple research awards won.',
         tech: ['Python', 'YOLO']
     },
+    {
+        filename: 'BG2SELL',
+        name: 'BG2SELL',
+        type: 'Full-stack web app',
+        year: 2026,
+        description: 'A B2C e-commerce platform for buying pre-owned board games. It demonstrates full-stack JavaScript development with features like user authentication, product search, shopping cart, and payment processing.',
+        tech: ['Express.js', 'PostgreSQL', 'Stripe']
+    },
 ]
