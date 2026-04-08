@@ -1,28 +1,25 @@
-import { ProjectsDataType } from '@/type/type'
+import { ProjectsDataType } from "@/type/type"
 import { motion } from 'motion/react'
-import Image from 'next/image'
+import Image from "next/image"
 
+export default function ProjectsGrid({ projectsData }: { projectsData: ProjectsDataType[] }) {
 
-
-
-export default function HomeProjectsGrid({ projectsData, isLastItemHidden }: { projectsData: ProjectsDataType[], isLastItemHidden: boolean }) {
     return (
-        /* Grid Area */
-        < div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 content-center max-w-400 mx-auto" >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 content-center max-w-400 mx-auto">
 
             {/* Individual Project Card */}
             {
                 projectsData.map((data, idx) => {
 
-                    const extraClsName = (idx === projectsData.length - 1 && isLastItemHidden) ? 'hidden sm:flex lg:hidden' : ''
+                    if(idx % 2)
 
                     return (
                         <motion.div
                             key={data.name}
-                            className={`flex flex-col gap-2 bg-card-black py-2 border-2 border-edge-yellow rounded-2xl ${extraClsName}`}
+                            className='flex flex-col gap-2 bg-card-black py-2 border-2 border-edge-yellow rounded-2xl'
                             initial={{ opacity: 0, y: 25 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1, delay: 0.25 * idx }}
+                            transition={{ duration: 1, delay: 0.25 }}
                             viewport={{ once: true }}
                         >
 
@@ -30,7 +27,7 @@ export default function HomeProjectsGrid({ projectsData, isLastItemHidden }: { p
                             <div>
                                 <Image
                                     src={`/${data.filename}/1.png`}
-                                    alt={`The feature image for the project ${data.name}.`}
+                                    alt={`The feature image for the project ${ data.name }.`}
                                     height={1080}
                                     width={1920}
                                     className="rounded-2xl w-14/15 mx-auto"
@@ -63,6 +60,6 @@ export default function HomeProjectsGrid({ projectsData, isLastItemHidden }: { p
                     )
                 })
             }
-        </div >
+        </div>
     )
 }

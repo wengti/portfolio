@@ -5,4 +5,4 @@ export type ProjectsDataType = {
     year: number
     description: string
     tech: string[]
-}[]
+}
