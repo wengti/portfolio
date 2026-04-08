@@ -2,6 +2,7 @@
 import { projectsData } from "@/data/projects";
 import Image from "next/image";
 import { motion } from 'motion/react'
+import Link from "next/link";
 
 export default function HomeProjects() {
 
@@ -13,9 +14,11 @@ export default function HomeProjects() {
                 <h2 className='text-letter-yellow font-bold text-lg'>
                     FEATURED PROJECTS
                 </h2>
-                <p className='underline text-xs md:text-sm self-end mr-2 cursor-pointer text-letter-yellow'>
-                    See All
-                </p>
+                <Link href='/projects'>
+                    <p className='underline text-xs md:text-sm self-end mr-2 cursor-pointer text-letter-yellow'>
+                        See All
+                    </p>
+                </Link>
             </div>
 
             {/* Grid Area */}
