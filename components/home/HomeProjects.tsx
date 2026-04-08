@@ -48,7 +48,7 @@ export default function HomeProjects() {
                                     <div className='flex gap-1 flex-wrap'>
                                         {
                                             data.tech.map(item =>
-                                                <div className='bg-card-yellow text-letter-yellow border border-edge-yellow rounded-sm w-fit px-2 py-1'>
+                                                <div className='bg-card-yellow text-letter-yellow border border-edge-yellow rounded-sm w-fit px-2 py-1' key={item}>
                                                     {item}
                                                 </div>
                                             )
