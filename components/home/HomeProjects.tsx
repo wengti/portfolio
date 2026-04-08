@@ -3,7 +3,7 @@ import { projectsData } from "@/data/projects";
 import Image from "next/image";
 import { motion } from 'motion/react'
 import Link from "next/link";
-import ProjectsGrid from "../projects/ProjectsGrid";
+import ProjectsGrid from "./HomeProjectsGrid";
 
 export default function HomeProjects() {
 
