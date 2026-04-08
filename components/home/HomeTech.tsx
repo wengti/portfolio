@@ -4,7 +4,7 @@ import TechStackGroup from "./TechStackGroup";
 export default function HomeTech() {
 
     return (
-        <section className='px-6 flex flex-col gap-2 sm:w-1/2'>
+        <section className='px-6 flex flex-col gap-2 sm:w-3/5'>
 
             {/* Heading of the section */}
             <h2 className='text-letter-yellow font-bold text-lg'>
