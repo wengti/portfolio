@@ -3,6 +3,9 @@
 import Link from "next/link";
 import HamburgerMenu from "../hamburger-menu/HamburgerMenu";
 import { usePathname } from "next/navigation";
+import { useMotionValueEvent, useScroll } from "motion/react";
+import { useState } from "react";
+import { motion } from 'motion/react'
 
 export default function Header() {
 
@@ -12,8 +15,25 @@ export default function Header() {
     const projectsClsName = pathname.startsWith('/projects') ? 'text-letter-yellow cursor-pointer hover:text-letter-yellow' : 'cursor-pointer hover:text-letter-yellow'
     const contactsClsName = pathname.startsWith('/contact') ? 'text-letter-yellow cursor-pointer hover:text-letter-yellow' : 'cursor-pointer hover:text-letter-yellow'
 
+    /* Make header appear when scrolling up */
+    const { scrollY } = useScroll()
+    const [hidden, setHidden] = useState(false)
+
+    useMotionValueEvent(scrollY, 'change', (current) => {
+        const previous = scrollY.getPrevious() ?? 0
+        if (current > previous && current > 150) setHidden(true)
+        else setHidden(false)
+    })
+
     return (
-        <header className='py-4 px-6 border-b border-edge-gray h-17'>
+        <motion.header
+            className='py-4 px-6 border-b border-edge-gray h-17 sticky top-0 bg-background-black'
+            animate={{
+                y: hidden ? -140 : 0,
+                opacity: hidden ? 0 : 1,
+            }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+        >
             <ul className='flex justify-between items-center'>
 
                 {/* Logo */}
@@ -58,6 +78,6 @@ export default function Header() {
                     <HamburgerMenu />
                 </li>
             </ul>
-        </header>
+        </motion.header>
     )
 }
