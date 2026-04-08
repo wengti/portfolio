@@ -13,7 +13,7 @@ export default function Header() {
     const contactsClsName = pathname.startsWith('/contacts') ? 'text-letter-yellow cursor-pointer' : 'cursor-pointer'
 
     return (
-        <header className='py-4 px-6 border-b border-edge-gray'>
+        <header className='py-4 px-6 border-b border-edge-gray h-17'>
             <ul className='flex justify-between items-center'>
 
                 {/* Logo */}
