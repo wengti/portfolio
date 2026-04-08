@@ -10,7 +10,7 @@ export default function ProjectsPage() {
 
     /* State - Pagination */
     const [currentPage, setCurrentPage] = useState(1)
-    const numItemsPerPage = 4
+    const numItemsPerPage = 2
     const totalPages = Math.ceil(projectsData.length / numItemsPerPage)
 
     function handlePageChange(page: number) {

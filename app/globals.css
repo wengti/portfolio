@@ -5,20 +5,6 @@
 
 @theme {
   
-  /* Extra color */  
-  --color-background-black: #151515;
-  --color-letter-white: whitesmoke;
-  --color-letter-gray: #646464;
-  --color-letter-mute: #303030;
-  --color-letter-mute2: #7f7f7f;
-  --color-letter-yellow: #F5C400;
-  --color-card-black: #1B1B1B;
-  --color-card-yellow: #211b0b;
-  --color-form-gray: #333332;
-  --color-edge-white: whitesmoke;
-  --color-edge-yellow: #413315;
-  --color-edge-gray: #41413e;
-
   --font-sans: "DM Sans", sans-serif;
 
   /* Primary */
@@ -487,6 +473,20 @@
   --shadow-hero: 0px -14px 100px 0px rgba(0, 0, 0, 0.05);
 
   --animate-pulse-custom: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  /* Extra color */  
+  --color-background-black: #151515;
+  --color-letter-white: whitesmoke;
+  --color-letter-gray: #646464;
+  --color-letter-mute: #303030;
+  --color-letter-mute2: #7f7f7f;
+  --color-letter-yellow: #F5C400;
+  --color-card-black: #1B1B1B;
+  --color-card-yellow: #211b0b;
+  --color-form-gray: #333332;
+  --color-edge-white: whitesmoke;
+  --color-edge-yellow: #413315;
+  --color-edge-gray: #41413e;
 }
 
 @layer base {
