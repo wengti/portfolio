@@ -32,7 +32,7 @@ export default function ContactForm() {
             >
 
                 {/* Name and Email */}
-                <div className='flex flex-col gap-4 sm:flex-row'>
+                <div className='flex flex-col gap-4 sm:flex-row w-full'>
                     <ContactTextInput
                         label='Name'
                         placeholder='John'
