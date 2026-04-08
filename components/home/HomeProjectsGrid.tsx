@@ -1,14 +1,8 @@
+import { ProjectsDataType } from '@/type/type'
 import { motion } from 'motion/react'
 import Image from 'next/image'
 
-type ProjectsDataType = {
-    filename: string
-    name: string
-    type: string
-    year: number
-    description: string
-    tech: string[]
-}[]
+
 
 
 export default function HomeProjectsGrid({ projectsData, isLastItemHidden }: { projectsData: ProjectsDataType, isLastItemHidden: boolean }) {
