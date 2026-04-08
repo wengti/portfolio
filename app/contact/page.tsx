@@ -4,7 +4,7 @@ export default function ContactPage() {
 
     return (
         <div className='grow flex flex-col justify-center'>
-            <div className=''>
+            <div className='my-8'>
                 <ContactForm />
             </div>
         </div>
