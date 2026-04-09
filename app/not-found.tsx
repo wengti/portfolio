@@ -1,4 +1,10 @@
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+    title: 'Not Found',
+    description: "The not found page for Wong Weng Ti's portfolio site."
+}
 
 export default function NotFound(){
 

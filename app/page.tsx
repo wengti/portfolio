@@ -3,7 +3,12 @@ import HomeAbout from "@/components/home/HomeAbout";
 import HomeProjects from "@/components/home/HomeProjects";
 import HomeTech from "@/components/home/HomeTech";
 import HomeTimeline from "@/components/home/HomeTimeline";
+import { Metadata } from "next";
 
+
+export const metadata: Metadata = {
+    title: 'Home | WWT'
+}
 
 export default function Home() {
 

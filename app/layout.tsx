@@ -2,10 +2,19 @@ import "./globals.css";
 import { Inter } from 'next/font/google'
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import { Metadata } from "next";
 
 const inter = Inter({
     subsets: ['latin']
 })
+
+export const metadata: Metadata = {
+    title: {
+        template: '%s | WWT',
+        default: 'WWT'
+    },
+    description: "The home page for Wong Weng Ti's portfolio site."
+}
 
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

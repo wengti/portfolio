@@ -6,9 +6,19 @@ import ProjectDetailTechCard from "@/components/projectDetail/ProjectDetailTechC
 import { projectsData } from "@/data/projects"
 import Link from "next/link"
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
-import { motion } from 'motion/react'
 import ProjectDetailOverview from "@/components/projectDetail/ProjectDetailOverview";
 import ProjectDetailPublications from "@/components/projectDetail/ProjectDetailPublications";
+
+export async function generateMetadata({ params }: { params: Promise<{ projectName: string }> }) {
+
+    const { projectName } = await params
+    return {
+        title: projectName,
+        description: projectsData.filter((data) => data.filename === projectName)[0].description
+    }
+
+
+}
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ projectName: string }> }) {
 
@@ -55,7 +65,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     data.references &&
                     <div className='flex flex-col gap-4'>
                         <h2 className='text-letter-yellow font-semibold text-sm'>PUBLICATION</h2>
-                        <ProjectDetailPublications references={data.references}/>
+                        <ProjectDetailPublications references={data.references} />
                     </div>
                 }
 
