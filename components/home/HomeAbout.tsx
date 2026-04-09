@@ -46,10 +46,12 @@ export default function HomeAbout() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
             >
-                <button className='text-letter-white font-semibold border border-edge-white rounded-md py-2 w-3/7 lg:h-fit'>
-                    View <br /> Projects
+                <button className='text-letter-white font-semibold border border-edge-white rounded-md py-2 w-3/7 lg:h-fit hover:bg-edge-yellow active:bg-edge-yellow'>
+                    <Link href='/projects'>
+                        View <br /> Projects
+                    </Link>
                 </button>
-                <button className='text-letter-white font-semibold border border-edge-white rounded-md py-2 w-3/7 lg:h-fit'>
+                <button className='text-letter-white font-semibold border border-edge-white rounded-md py-2 w-3/7 lg:h-fit hover:bg-edge-yellow active:bg-edge-yellow'>
                     <Link href='https://drive.google.com/drive/folders/1wW6CfjJ3K_bTFNeFafgp9Aup87z3yCFm?usp=sharing' target='_blank'>
                         Download <br /> CV
                     </Link>

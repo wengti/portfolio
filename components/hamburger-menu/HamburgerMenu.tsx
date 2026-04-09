@@ -20,35 +20,35 @@ export default function HamburgerMenu() {
 
             {/* Hamburger Menu Icon */}
             <DropdownMenuTrigger className='flex items-center'>
-                <RxHamburgerMenu className=' text-letter-white text-2xl' />
+                <RxHamburgerMenu className=' text-letter-white text-2xl hover:text-letter-yellow active:text-letter-yellow' />
             </DropdownMenuTrigger>
 
 
             <DropdownMenuContent className='bg-card-black border-2 border-edge-gray rounded-lg cursor-pointer p-1 text-letter-white'>
                 {/* Home */}
                 <DropdownMenuItem className={`${generalClsName} ${homeClsName}`}>
-                    <Link href='/' className='w-full'>
+                    <Link href='/' className='w-full active:text-letter-yellow'>
                         Home
                     </Link>
                 </DropdownMenuItem>
 
                 {/* Projects */}
                 <DropdownMenuItem className={`${generalClsName} ${projectsClsName}`}>
-                    <Link href='/projects' className='w-full'>
+                    <Link href='/projects' className='w-full active:text-letter-yellow'>
                         Projects
                     </Link>
                 </DropdownMenuItem>
 
                 {/* Contact */}
                 <DropdownMenuItem className={`${generalClsName} ${contactsClsName}`}>
-                    <Link href='/contact' className='w-full'>
+                    <Link href='/contact' className='w-full active:text-letter-yellow'>
                         Contact
                     </Link>
                 </DropdownMenuItem>
 
                 {/* Download CV */}
                 <DropdownMenuItem className={`${generalClsName}`}>
-                    <Link href='https://drive.google.com/drive/folders/1wW6CfjJ3K_bTFNeFafgp9Aup87z3yCFm?usp=sharing' target='_blank'  className='w-full'>
+                    <Link href='https://drive.google.com/drive/folders/1wW6CfjJ3K_bTFNeFafgp9Aup87z3yCFm?usp=sharing' target='_blank'  className='w-full active:text-letter-yellow'>
                         Download CV
                     </Link>
                 </DropdownMenuItem>

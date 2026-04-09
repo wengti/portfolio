@@ -67,7 +67,7 @@ export default function Header() {
                 </div>
 
                 {/* Download CV */}
-                <li className='hidden md:block border border-edge-white font-extrabold py-2 px-4 rounded-xl text-letter-white'>
+                <li className='hidden md:block border border-edge-white font-extrabold py-2 px-4 rounded-xl text-letter-white hover:bg-edge-yellow active:bg-edge-yellow'>
                     <Link href='https://drive.google.com/drive/folders/1wW6CfjJ3K_bTFNeFafgp9Aup87z3yCFm?usp=sharing' target='_blank'>
                         Download CV
                     </Link>

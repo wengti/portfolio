@@ -20,7 +20,7 @@ export default function ProjectsPage() {
     /* State - ProjectsData */
     const [allProjectsData, setAllProjectsData] = useState<ProjectsDataType[]>(projectsData)
 
-    /* Use Effect */
+    /* Use Effect - Scroll to the top at page change */
     useEffect( () => {
         window.scrollTo({top: 0, behavior:'smooth'})
     }, [currentPage])

@@ -65,7 +65,7 @@ export function Pagination({
                         className={cn(
                             sideButtonStyles({ sideLayout, variant }),
                             { "sm:rounded-r-none sm:border-r-0": variant === "compact" },
-                            "bg-card-black! border! border-edge-yellow! text-letter-white! hover:bg-card-yellow! disabled:opacity-0"
+                            "bg-card-black! border! border-edge-yellow! text-letter-white! hover:bg-edge-yellow! active:bg-edge-yellow! disabled:opacity-0"
                         )}
                     >
                         <ArrowLeft
@@ -153,7 +153,7 @@ export function Pagination({
                         className={cn(
                             sideButtonStyles({ sideLayout, variant }),
                             { "sm:rounded-r-none sm:border-r-0": variant === "compact" },
-                            "bg-card-black! border! border-edge-yellow! text-letter-white! hover:bg-card-yellow! disabled:opacity-0"
+                            "bg-card-black! border! border-edge-yellow! text-letter-white! hover:bg-edge-yellow! active:bg-edge-yellow! disabled:opacity-0"
                         )}
                     >
                         {sideLayout !== "icon" && (
@@ -186,7 +186,7 @@ function PaginationButton({
             aria-label={`Go to page ${page}`}
             aria-current={isActive ? "page" : undefined}
             className={cn(
-                "size-10 shrink-0 rounded-lg aria-[current=page]:bg-card-black border border-edge-yellow text-letter-white hover:bg-card-yellow",
+                "size-10 shrink-0 rounded-lg aria-[current=page]:bg-card-black border border-edge-yellow text-letter-white hover:bg-edge-yellow active:bg-edge-yellow",
                 paginationVariant === "compact" &&
                 "rounded-none border-y border-button-outline-border bg-button-outline-background"
             )}

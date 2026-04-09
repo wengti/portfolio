@@ -116,7 +116,7 @@ export default function ContactForm() {
 
                     {/* Submit Button */}
                     <button
-                        className='bg-background-black p-2 rounded-lg border border-edge-gray text-letter-white font-semibold flex gap-2 justify-center items-center min-w-50 w-3/7 mx-auto'
+                        className='bg-background-black p-2 rounded-lg border border-edge-gray text-letter-white font-semibold flex gap-2 justify-center items-center min-w-50 w-3/7 mx-auto hover:bg-edge-yellow active:bg-edge-yellow'
                         disabled={isPending}
                     >
                         {

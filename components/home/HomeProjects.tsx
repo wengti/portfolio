@@ -16,7 +16,7 @@ export default function HomeProjects() {
                     FEATURED PROJECTS
                 </h2>
                 <Link href='/projects' className='self-end'>
-                    <p className='underline text-xs md:text-sm mr-2 cursor-pointer text-letter-yellow'>
+                    <p className='underline text-xs md:text-sm mr-2 cursor-pointer text-letter-white hover:text-letter-yellow active:text-letter-yellow'>
                         See All
                     </p>
                 </Link>
