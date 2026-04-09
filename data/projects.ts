@@ -1,4 +1,6 @@
-export const projectsData = [
+import { ProjectsDataType } from "@/type/type";
+
+export const projectsData: ProjectsDataType[] = [
     {
         isFeatured: true,
         filename: 'Skorbot',
