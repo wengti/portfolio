@@ -1,14 +1,21 @@
+'use client'
 import { ProjectsDataType } from "@/type/type";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa6";
 import { GrDeploy } from "react-icons/gr";
 import { LuPresentation } from "react-icons/lu";
+import {motion} from 'motion/react'
 
 export default function ProjectDetailSummary({ data }: { data: ProjectsDataType }) {
 
     return (
-        <div className='flex flex-col gap-6 lg:w-1/2'>
-
+        <motion.div 
+            className='flex flex-col gap-6 lg:w-1/2'
+            initial={{opacity:0, y: 25}}
+            whileInView={{opacity:1, y:0}}
+            transition={{duration: 1}}
+            viewport={{once: true}}
+        >
             {/* tagline */}
             <p className='text-xs font-semibold'>
                 {data.type.toUpperCase()} | {data.year}
@@ -65,6 +72,6 @@ export default function ProjectDetailSummary({ data }: { data: ProjectsDataType 
                     </button>
                 }
             </div>
-        </div>
+        </motion.div>
     )
 }

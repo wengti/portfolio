@@ -3,10 +3,17 @@ import { ProjectsDataType } from "@/type/type";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../tailgrids/core/carousel";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
+import { motion } from 'motion/react'
 
 export default function ProjectDetailGallery({ data }: { data: ProjectsDataType }) {
     return (
-        <div className="w-full max-w-180 mx-auto lg:w-1/2 lg:grow">
+        <motion.div 
+            className="w-full max-w-180 mx-auto lg:w-1/2 lg:grow"
+            initial={{opacity:0, y: 25}}
+            whileInView={{opacity:1, y:0}}
+            transition={{duration: 1, delay:0.25}}
+            viewport={{once: true}}
+        >
             <Carousel
                 opts={{
                     align: "start",
@@ -36,6 +43,6 @@ export default function ProjectDetailGallery({ data }: { data: ProjectsDataType 
                 <CarouselPrevious className="left-4" />
                 <CarouselNext className="right-4" />
             </Carousel>
-        </div>
+        </motion.div>
     )
 }

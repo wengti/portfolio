@@ -1,9 +1,17 @@
+'use client'
 import { ProjectsDataType } from "@/type/type";
+import { motion } from 'motion/react'
 
 export default function ProjectDetailTechCard({ data }: { data: ProjectsDataType }) {
 
     return (
-        <div className='bg-card-black border border-edge-gray rounded-xl px-6 py-6 md:w-1/2 flex flex-col max-w-160'>
+        <motion.div
+            className='bg-card-black border border-edge-gray rounded-xl px-6 py-6 md:w-1/2 flex flex-col max-w-160'
+            initial={{opacity:0, y: 25}}
+            whileInView={{opacity:1, y:0}}
+            transition={{duration: 1}}
+            viewport={{once: true}}
+        >
             <h3 className='mb-4 text-sm font-semibold tracking-widest'>
                 TECH STACK
             </h3>
@@ -25,6 +33,6 @@ export default function ProjectDetailTechCard({ data }: { data: ProjectsDataType
                     }
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
