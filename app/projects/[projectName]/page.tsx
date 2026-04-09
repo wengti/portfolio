@@ -56,7 +56,12 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                             {
                                 data.references.map((reference, idx) => {
                                     return (
-                                        <li className='text-letter-mute2'><span className='text-letter-yellow'>{idx + 1}.</span> {reference}</li>
+                                        <li 
+                                            key={idx} 
+                                            className='text-letter-mute2'
+                                        >
+                                            <span className='text-letter-yellow'>{idx + 1}.</span> {reference}
+                                        </li>
                                     )
                                 })
                             }
