@@ -11,7 +11,7 @@ export default function Home() {
         <>
             <HomeAbout />
             <HomeProjects />
-            <div className='pt-6 flex flex-col gap-4 sm:flex-row'>
+            <div className='pt-6 flex flex-col gap-4 sm:flex-row sm:pb-6'>
                 <HomeTech />
                 <HomeTimeline />
             </div>

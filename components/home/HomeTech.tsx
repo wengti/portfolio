@@ -18,6 +18,11 @@ export default function HomeTech() {
                 />
 
                 <TechStackGroup
+                    title='Styling'
+                    techItems={techData.styling}
+                />
+
+                <TechStackGroup
                     title='Backend'
                     techItems={techData.backend}
                 />
