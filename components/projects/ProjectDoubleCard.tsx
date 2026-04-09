@@ -52,7 +52,7 @@ export default function ProjectsDoubleCard({data, isShownOnLargeScreen}: {data: 
                         )
                     }
                 </div>
-                <p className='leading-6 text-base mt-2'>
+                <p className='leading-6 text-base mt-2 text-letter-mute2'>
                     {data.description}
                 </p>
             </div>
