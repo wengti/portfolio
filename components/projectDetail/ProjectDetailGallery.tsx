@@ -5,7 +5,6 @@ import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 
 export default function ProjectDetailGallery({ data }: { data: ProjectsDataType }) {
-
     return (
         <div className="w-full max-w-180 mx-auto lg:w-1/2 lg:grow">
             <Carousel
