@@ -27,7 +27,7 @@ export default function Header() {
 
     return (
         <motion.header
-            className='py-4 px-6 border-b border-edge-gray h-17 sticky top-0 bg-background-black'
+            className='py-4 px-6 border-b border-edge-gray h-17 sticky top-0 bg-background-black z-2'
             animate={{
                 y: hidden ? -140 : 0,
                 opacity: hidden ? 0 : 1,
