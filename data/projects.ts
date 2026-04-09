@@ -1,5 +1,6 @@
 export const projectsData = [
     {
+        isFeatured: 'true',
         filename: 'Skorbot',
         name: 'Skorbot',
         type: 'Full-stack web app',
@@ -8,6 +9,7 @@ export const projectsData = [
         tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS']
     },
     {
+        isFeatured: 'true',
         filename: 'Pickaboru',
         name: 'Pickaboru',
         type: 'Full-stack web app',
@@ -16,6 +18,7 @@ export const projectsData = [
         tech: ['React', 'React Router', 'Supabase']
     },
     {
+        isFeatured: 'true',
         filename: 'FYP',
         name: 'Cost Effective Fault Detection on Solar Panel using YOLO',
         type: 'Research',
@@ -24,6 +27,7 @@ export const projectsData = [
         tech: ['Python', 'YOLO']
     },
     {
+        isFeatured: 'true',
         filename: 'BG2SELL',
         name: 'BG2SELL',
         type: 'Full-stack web app',

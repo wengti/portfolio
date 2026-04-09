@@ -22,7 +22,7 @@ export default function HomeProjects() {
                 </Link>
             </div>
 
-            <HomeProjectsGrid projectsData={projectsData.slice(0,4)} isLastItemHidden={true}/>
+            <HomeProjectsGrid projectsData={projectsData.filter((data) => data.isFeatured)} isLastItemHidden={true}/>
         </section>
     )
 }
