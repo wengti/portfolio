@@ -64,10 +64,10 @@ export const projectsData: ProjectsDataType[] = [
             'Admin dashboard for platform management',
         ],
         fullTech: {
-            framework: 'React + Vite',
+            framework: 'React, React Router, Vite',
             language: 'JavaScript',
             backend: 'Supabase',
-            styling: 'Material UI (MUI)',
+            styling: 'CSS, Material UI (MUI)',
             deployment: 'Render',
         },
         challenges: [
@@ -80,7 +80,7 @@ export const projectsData: ProjectsDataType[] = [
             'Leveraged Supabase Realtime to power instant chat between renters and owners, eliminating the need for polling and keeping conversations live across sessions.',
             'Integrated React Calendar for rental date selection and validated chosen periods against existing bookings in Supabase to prevent double-booking.',
             'Designed granular Supabase RLS policies so that each user can only read or modify records they own or are explicitly permitted to access, keeping rental and profile data properly isolated.',
-            'Implemented a review system tied to completed rentals, giving both parties verifiable reputation scores, with an admin dashboard providing a moderation layer for escalated issues.',
+            'Implemented a review system tied to completed rentals, giving users verifiable reputation scores, with an admin dashboard providing a moderation layer for escalated issues.',
         ],
     },
 
