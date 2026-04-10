@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wong Weng Ti — Personal Portfolio
 
-## Getting Started
+A personal portfolio website built with Next.js, showcasing projects, skills, and professional experience. Features a functional contact form powered by Resend.
 
-First, run the development server:
+**Live site:** https://wwt-portfolio.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Framework:** Next.js + React 19 + TypeScript
+- **Styling:** Tailwind CSS, Framer Motion animations
+- **UI:** Tailgrids
+- **Email:** Resend with React Email templates
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Home** — About section, featured projects grid, tech stack showcase, professional timeline
+- **Projects** — Full project listing with live demo links, GitHub repos, and demo videos
+- **Project Detail Pages** — Per-project gallery, feature breakdown, tech stack, and engineering challenges
+- **Contact** — Email form with server-side handling via Resend
+- Responsive design with dark theme and sticky scroll-aware header
 
-## Learn More
+## Key Learnings
 
-To learn more about Next.js, take a look at the following resources:
+- **Scroll-aware header with Framer Motion** — Implemented a header that hides on scroll down and reappears on scroll up, reclaiming vertical space for content — especially valuable on mobile viewports.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Resend + React Email templates** — Integrated email delivery via Resend. Initially expected to write templates with standard HTML and Tailwind CSS, but React Email requires its own component syntax and conventional inline CSS styles instead.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Tailgrids components** — Leveraged pre-built Tailgrids components (dropdown for the mobile hamburger menu, autoplay carousel for project galleries), significantly cutting down UI development time.
