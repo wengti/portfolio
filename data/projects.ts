@@ -568,7 +568,7 @@ export const projectsData: ProjectsDataType[] = [
         year: 2021,
         liveSite: '',
         gitHub: '',
-        demo: '',
+        demo: 'https://canva.link/7pem99tzvncldtn',
 
         description: 'A prototype wearable device built for children with autism — continuously tracking heart rate and motion, and relaying the data wirelessly to a parent-facing monitoring interface in real time, at a fraction of the cost of existing commercial solutions.',
 
