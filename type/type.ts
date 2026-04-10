@@ -1,5 +1,6 @@
 export type ProjectsDataType = {
     isFeatured: boolean
+    featuredRank: number,
     filename: string
     name: string
     type: string

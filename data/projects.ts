@@ -3,134 +3,7 @@ import { ProjectsDataType } from "@/type/type";
 export const projectsData: ProjectsDataType[] = [
     {
         isFeatured: true,
-        filename: 'Skorbot',
-        name: 'Skorbot',
-        type: 'Full-stack web app',
-        year: 2026,
-        liveSite: 'https://skorbot.vercel.app/',
-        gitHub: 'https://github.com/wengti/skorbot',
-        demo: 'https://www.youtube.com/watch?v=lUbW93Q5HW0',
-        description: 'A full-stack platform that brings structure to casual pickleball sessions — handling fair game matchups, match recording, and a live leaderboard all in one place.',
-        tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Tailgrids'],
-        overview: "Skorbot was built to solve a real pain point in recreational pickleball communities — there's no easy way to arrange fair matchups or track who's actually winning. Players can register profiles, log matches, and compete on a live leaderboard, backed by an algorithm that ensures fair and varied opponents across each session.",
-        feature: [
-            'Sign in via Facebook, Google, or Email',
-            'Fair matchup algorithm for balanced opponent pairing',
-            'Real-time score tracking and live leaderboard',
-            'Player statistics dashboard',
-            'Player payment status tracking',
-            'Mobile-responsive design'
-        ],
-        fullTech: {
-            framework: 'Next.js',
-            language: 'TypeScript',
-            backend: 'Supabase',
-            styling: 'Tailwind CSS, Tailgrids',
-            deployment: 'Vercel'
-        },
-        challenges: [
-            "Fair matchup algorithm design",
-            'Real-time leaderboard sync',
-            'Multi-provider authentication setup',
-            "Serving user-uploaded pictures",
-        ],
-        solutions: [
-            'Designed a matchup algorithm that randomly pairs opponents and teammates, maximises matchup variety within a fixed number of rounds, and guarantees each player gets a roughly equal number of games.',
-            'Used Supabase Realtime subscriptions to push rank and score updates to all connected clients instantly, without polling.',
-            'Implemented Supabase Auth with protected Next.js routes that redirect unauthenticated users via middleware proxy.',
-            'Used Supabase Storage to store and serve user-uploaded images for profile pictures, room photos, and payment receipts.',
-        ],
-
-    },
-
-    {
-        isFeatured: true,
-        filename: 'Pickaboru',
-        name: 'Pickaboru',
-        type: 'Full-stack web app',
-        year: 2026,
-        liveSite: 'https://pickaboru.onrender.com/',
-        gitHub: 'https://github.com/wengti/pickaboru',
-        demo: 'https://www.youtube.com/watch?v=UeWfgmJQAUM',
-        description: 'A peer-to-peer pickleball paddle rental platform. Users can browse available paddles, make rental bookings, manage their profiles, and communicate with other users via real-time chat. ',
-        tech: ['React', 'React Router', 'Supabase', 'Material UI'],
-        overview: "Pickaboru tackles the high cost of getting into pickleball by letting community members rent paddles directly from one another. Players can browse listings, book rental periods via a calendar picker, and message owners through real-time chat — all within one platform. Owners build reputation through a review system, while an admin dashboard keeps the marketplace accountable. The backend is powered entirely by Supabase, handling auth, database, real-time messaging, and Row Level Security in one place.",
-        feature: [
-            'Peer-to-peer paddle listing and rental booking',
-            'Calendar-based date selection with availability checks',
-            'Real-time instant messaging between renters and owners',
-            'Review and rating system for community trust',
-            'Notification system for booking and message updates',
-            'Admin dashboard for platform management',
-        ],
-        fullTech: {
-            framework: 'React, React Router, Vite',
-            language: 'JavaScript',
-            backend: 'Supabase',
-            styling: 'CSS, Material UI (MUI)',
-            deployment: 'Render',
-        },
-        challenges: [
-            'Real-time peer-to-peer messaging',
-            'Rental availability and date management',
-            'Row Level Security (RLS) policy design',
-            'Building marketplace trust without central moderation',
-        ],
-        solutions: [
-            'Leveraged Supabase Realtime to power instant chat between renters and owners, eliminating the need for polling and keeping conversations live across sessions.',
-            'Integrated React Calendar for rental date selection and validated chosen periods against existing bookings in Supabase to prevent double-booking.',
-            'Designed granular Supabase RLS policies so that each user can only read or modify records they own or are explicitly permitted to access, keeping rental and profile data properly isolated.',
-            'Implemented a review system tied to completed rentals, giving users verifiable reputation scores, with an admin dashboard providing a moderation layer for escalated issues.',
-        ],
-    },
-
-    {
-        isFeatured: true,
-        filename: 'BG2SELL',
-        name: 'BG2SELL',
-        type: 'Full-stack web app',
-        year: 2026,
-        liveSite: 'https://bg2sell.onrender.com/',
-        gitHub: 'https://github.com/wengti/bg-site',
-        demo: 'https://www.youtube.com/watch?v=I5TpeobEpMc',
-        description: 'A B2C e-commerce platform for buying pre-owned board games. It demonstrates full-stack JavaScript development with features like user authentication, product search, shopping cart, and payment processing.',
-        tech: ['Express.js', 'PostgreSQL', 'Stripe'],
-        overview: 'BG2SELL is a full-stack e-commerce site where users can browse, search, and purchase secondhand board games end-to-end. Product discovery is powered by accent-insensitive search, making lookups flexible regardless of special characters in game titles. The cart and authentication state persist across sessions using PostgreSQL-backed session storage rather than in-memory storage, keeping the app production-ready. Security is treated seriously throughout — bcrypt password hashing, HttpOnly session cookies, and input sanitization are applied at every entry point.',
-        feature: [
-            'Product catalog browsing with accent-insensitive search',
-            'Shopping cart with persistent session state',
-            'Real payment processing via Stripe',
-            'User authentication with bcrypt password hashing',
-            'PostgreSQL-backed session storage for scalability',
-            'Mobile-responsive design',
-        ],
-
-        fullTech: {
-            runtime: 'Node.js',
-            framework: 'Express.js',
-            language: 'JavaScript',
-            database: 'PostgreSQL (Supabase)',
-            payment: 'Stripe',
-            deployment: 'Render',
-        },
-
-        challenges: [
-            'Session persistence across server restarts',
-            'Flexible product search with accent support',
-            'Secure Stripe checkout integration',
-            'Route protection and input sanitization',
-        ],
-
-        solutions: [
-            'Used connect-pg-simple to store sessions directly in PostgreSQL instead of server memory, so sessions survive restarts and the app can scale horizontally without losing login state.',
-            'Implemented accent-insensitive text matching in PostgreSQL queries, allowing users to find products regardless of diacritics or special characters in their search terms.',
-            'Integrated Stripe on both client (@stripe/stripe-js) and server (stripe SDK) sides, keeping secret keys server-only and handling the full payment lifecycle through a dedicated checkout route.',
-            'Built a middleware-based auth layer to guard all protected routes, paired with bcryptjs for password hashing and the validator library for input sanitization to prevent injection attacks.',
-        ],
-    },
-
-    {
-        isFeatured: true,
+        featuredRank: 4,
         filename: 'Lyricfy-JP',
         name: 'Lyricfy-JP',
         type: 'Full-stack web app',
@@ -181,6 +54,92 @@ export const projectsData: ProjectsDataType[] = [
 
     {
         isFeatured: true,
+        featuredRank: 0,
+        filename: 'Skorbot',
+        name: 'Skorbot',
+        type: 'Full-stack web app',
+        year: 2026,
+        liveSite: 'https://skorbot.vercel.app/',
+        gitHub: 'https://github.com/wengti/skorbot',
+        demo: 'https://www.youtube.com/watch?v=lUbW93Q5HW0',
+        description: 'A full-stack platform that brings structure to casual pickleball sessions — handling fair game matchups, match recording, and a live leaderboard all in one place.',
+        tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Tailgrids'],
+        overview: "Skorbot was built to solve a real pain point in recreational pickleball communities — there's no easy way to arrange fair matchups or track who's actually winning. Players can register profiles, log matches, and compete on a live leaderboard, backed by an algorithm that ensures fair and varied opponents across each session.",
+        feature: [
+            'Sign in via Facebook, Google, or Email',
+            'Fair matchup algorithm for balanced opponent pairing',
+            'Real-time score tracking and live leaderboard',
+            'Player statistics dashboard',
+            'Player payment status tracking',
+            'Mobile-responsive design'
+        ],
+        fullTech: {
+            framework: 'Next.js',
+            language: 'TypeScript',
+            backend: 'Supabase',
+            styling: 'Tailwind CSS, Tailgrids',
+            deployment: 'Vercel'
+        },
+        challenges: [
+            "Fair matchup algorithm design",
+            'Real-time leaderboard sync',
+            'Multi-provider authentication setup',
+            "Serving user-uploaded pictures",
+        ],
+        solutions: [
+            'Designed a matchup algorithm that randomly pairs opponents and teammates, maximises matchup variety within a fixed number of rounds, and guarantees each player gets a roughly equal number of games.',
+            'Used Supabase Realtime subscriptions to push rank and score updates to all connected clients instantly, without polling.',
+            'Implemented Supabase Auth with protected Next.js routes that redirect unauthenticated users via middleware proxy.',
+            'Used Supabase Storage to store and serve user-uploaded images for profile pictures, room photos, and payment receipts.',
+        ],
+
+    },
+
+    {
+        isFeatured: true,
+        featuredRank: 1,
+        filename: 'Pickaboru',
+        name: 'Pickaboru',
+        type: 'Full-stack web app',
+        year: 2026,
+        liveSite: 'https://pickaboru.onrender.com/',
+        gitHub: 'https://github.com/wengti/pickaboru',
+        demo: 'https://www.youtube.com/watch?v=UeWfgmJQAUM',
+        description: 'A peer-to-peer pickleball paddle rental platform. Users can browse available paddles, make rental bookings, manage their profiles, and communicate with other users via real-time chat. ',
+        tech: ['React', 'React Router', 'Supabase', 'Material UI'],
+        overview: "Pickaboru tackles the high cost of getting into pickleball by letting community members rent paddles directly from one another. Players can browse listings, book rental periods via a calendar picker, and message owners through real-time chat — all within one platform. Owners build reputation through a review system, while an admin dashboard keeps the marketplace accountable. The backend is powered entirely by Supabase, handling auth, database, real-time messaging, and Row Level Security in one place.",
+        feature: [
+            'Peer-to-peer paddle listing and rental booking',
+            'Calendar-based date selection with availability checks',
+            'Real-time instant messaging between renters and owners',
+            'Review and rating system for community trust',
+            'Notification system for booking and message updates',
+            'Admin dashboard for platform management',
+        ],
+        fullTech: {
+            framework: 'React, React Router, Vite',
+            language: 'JavaScript',
+            backend: 'Supabase',
+            styling: 'CSS, Material UI (MUI)',
+            deployment: 'Render',
+        },
+        challenges: [
+            'Real-time peer-to-peer messaging',
+            'Rental availability and date management',
+            'Row Level Security (RLS) policy design',
+            'Building marketplace trust without central moderation',
+        ],
+        solutions: [
+            'Leveraged Supabase Realtime to power instant chat between renters and owners, eliminating the need for polling and keeping conversations live across sessions.',
+            'Integrated React Calendar for rental date selection and validated chosen periods against existing bookings in Supabase to prevent double-booking.',
+            'Designed granular Supabase RLS policies so that each user can only read or modify records they own or are explicitly permitted to access, keeping rental and profile data properly isolated.',
+            'Implemented a review system tied to completed rentals, giving users verifiable reputation scores, with an admin dashboard providing a moderation layer for escalated issues.',
+        ],
+    },
+
+    {
+        isFeatured: true,
+        featuredRank: 3,
         filename: 'Weather-Now',
         name: 'Weather Now',
         type: 'Frontend web app',
@@ -228,7 +187,147 @@ export const projectsData: ProjectsDataType[] = [
     },
 
     {
+        isFeatured: false,
+        featuredRank: 0,
+        filename: 'Todo-List',
+        name: 'Todo List',
+        type: 'Frontend web app',
+        year: 2026,
+        liveSite: 'https://todo-list-vz2n.onrender.com/',
+        gitHub: 'https://github.com/wengti/todo-list',
+        demo: '',
+
+        description: 'A todo app built to sharpen React and TypeScript fundamentals — featuring drag-and-drop reordering, filter views, local storage persistence, and dark mode.',
+
+        tech: ['React', 'TypeScript', 'CSS'],
+
+        overview: 'A fully functional todo app built as a hands-on exercise in React and TypeScript. Beyond the core CRUD operations, it includes drag-and-drop reordering, filter views for active and completed items, bulk clear, and dark mode — all persisted to local storage. The focus was on writing correct, idiomatic React with proper state immutability and clean event handling.',
+
+        feature: [
+            'Add, complete, and delete todo items',
+            'Drag-and-drop reordering',
+            'Filter views — All, Active, and Completed',
+            'Bulk clear completed items',
+            'Local storage persistence across sessions',
+            'Dark and light mode toggle',
+            'Fully responsive layout',
+        ],
+
+        fullTech: {
+            framework: 'React, Vite',
+            language: 'TypeScript',
+            styling: 'CSS',
+            deployment: 'Render',
+        },
+
+        challenges: [
+            'Drag-and-drop conflicting with interactive elements',
+            'Unintended state mutation with object arrays',
+        ],
+
+        solutions: [
+            'Drop zones positioned over buttons were blocking clicks during normal use. Solved this with CSS pointer-events — drop zones are set to pointer-events: none by default so buttons remain fully accessible, then switched to pointer-events: auto only when a drag operation begins via onDragStart, and restored on onDragEnd.',
+            'Updating an array of objects in React state requires creating fresh copies of both the array and the modified objects — not just the array. Using .map() to return new object instances on each update prevents shallow copy issues, avoids unintended mutations across renders, and satisfies React strict mode\'s purity requirements.',
+        ],
+    },
+
+    {
+        isFeatured: false,
+        featuredRank: 0,
+        filename: 'Quizzical',
+        name: 'Quizzical',
+        type: 'Frontend web app',
+        year: 2026,
+        liveSite: 'https://quizzical-tmi2.onrender.com/',
+        gitHub: 'https://github.com/wengti/quizzical',
+        demo: '',
+
+        description: 'A trivia quiz app powered by the Open Trivia Database — pick your category, difficulty, and question count, then race against a countdown timer to score above 50% and win.',
+
+        tech: ['React', 'JavaScript', 'CSS', 'Open Trivia DB API'],
+
+        overview: 'Quizzical pulls live trivia questions from the Open Trivia Database and presents them as a timed multiple-choice quiz. Players configure each session by category, difficulty, and question count before the game begins. Each question has a 5-second countdown — run out of time and the answer is revealed automatically. Score above 50% to win, complete with a confetti celebration.',
+
+        feature: [
+            'Configurable quiz setup — category, difficulty, and question count',
+            '5-second countdown timer per question with auto-submit on expiry',
+            'Randomised answer order for each question',
+            'Win/loss detection with confetti animation',
+            'Visual correct/incorrect feedback after each answer',
+            'API error handling for invalid or exhausted question pools',
+        ],
+
+        fullTech: {
+            framework: 'React, Vite',
+            language: 'JavaScript',
+            styling: 'CSS',
+            api: 'Open Trivia Database',
+            deployment: 'Render',
+        },
+
+        challenges: [
+            'Auto-submitting answers when the timer expires',
+            'Shuffling answers without breaking True/False questions',
+            'API response data containing HTML entities',
+        ],
+
+        solutions: [
+            'Used a useEffect with a setInterval countdown tied to the selected answer state. When the interval reaches zero, it programmatically triggers the same submit handler used for manual answers — ensuring identical scoring logic regardless of how the question was completed.',
+            'Multiple-choice answers are shuffled by randomly sorting all options, but boolean questions must always display as "True" and "False" in a fixed order. Added a question type check before shuffling to skip randomisation for boolean questions entirely.',
+            'The Open Trivia Database returns question text and answers as HTML-encoded strings (e.g. &amp;, &#039;). Used the html-entities library to decode all API responses before storing them in state, preventing raw entity strings from rendering in the UI.',
+        ],
+    },
+
+    {
         isFeatured: true,
+        featuredRank: 2,
+        filename: 'BG2SELL',
+        name: 'BG2SELL',
+        type: 'Full-stack web app',
+        year: 2026,
+        liveSite: 'https://bg2sell.onrender.com/',
+        gitHub: 'https://github.com/wengti/bg-site',
+        demo: 'https://www.youtube.com/watch?v=I5TpeobEpMc',
+        description: 'A B2C e-commerce platform for buying pre-owned board games. It demonstrates full-stack JavaScript development with features like user authentication, product search, shopping cart, and payment processing.',
+        tech: ['Express.js', 'PostgreSQL', 'Stripe'],
+        overview: 'BG2SELL is a full-stack e-commerce site where users can browse, search, and purchase secondhand board games end-to-end. Product discovery is powered by accent-insensitive search, making lookups flexible regardless of special characters in game titles. The cart and authentication state persist across sessions using PostgreSQL-backed session storage rather than in-memory storage, keeping the app production-ready. Security is treated seriously throughout — bcrypt password hashing, HttpOnly session cookies, and input sanitization are applied at every entry point.',
+        feature: [
+            'Product catalog browsing with accent-insensitive search',
+            'Shopping cart with persistent session state',
+            'Real payment processing via Stripe',
+            'User authentication with bcrypt password hashing',
+            'PostgreSQL-backed session storage for scalability',
+            'Mobile-responsive design',
+        ],
+
+        fullTech: {
+            runtime: 'Node.js',
+            framework: 'Express.js',
+            language: 'JavaScript',
+            database: 'PostgreSQL (Supabase)',
+            payment: 'Stripe',
+            deployment: 'Render',
+        },
+
+        challenges: [
+            'Session persistence across server restarts',
+            'Flexible product search with accent support',
+            'Secure Stripe checkout integration',
+            'Route protection and input sanitization',
+        ],
+
+        solutions: [
+            'Used connect-pg-simple to store sessions directly in PostgreSQL instead of server memory, so sessions survive restarts and the app can scale horizontally without losing login state.',
+            'Implemented accent-insensitive text matching in PostgreSQL queries, allowing users to find products regardless of diacritics or special characters in their search terms.',
+            'Integrated Stripe on both client (@stripe/stripe-js) and server (stripe SDK) sides, keeping secret keys server-only and handling the full payment lifecycle through a dedicated checkout route.',
+            'Built a middleware-based auth layer to guard all protected routes, paired with bcryptjs for password hashing and the validator library for input sanitization to prevent injection attacks.',
+        ],
+    },
+
+
+    {
+        isFeatured: true,
+        featuredRank: 5,
         filename: 'FYP',
         name: 'Cost Effective Fault Detection on Solar Panel using YOLO',
         type: 'Research',
@@ -283,6 +382,9 @@ export const projectsData: ProjectsDataType[] = [
             'W. T. Wong, S. K. Phang, N. Sariff, H. S. Husin, and B. J. Pandian, "Enhanced Fault Detection for Solar Panels with YOLOv7 on RGB Images Using Augmentation Strategies and an Early Stopper," Artificial Intelligence in Instrumentation, Control and Automation, pp. 503-520, 2026.',
         ]
     },
+
+
+
 
 
 ]

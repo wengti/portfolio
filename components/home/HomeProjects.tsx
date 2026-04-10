@@ -22,7 +22,7 @@ export default function HomeProjects() {
                 </Link>
             </div>
 
-            <HomeProjectsGrid projectsData={projectsData.filter((data) => data.isFeatured)} />
+            <HomeProjectsGrid projectsData={projectsData.filter((data) => data.isFeatured).toSorted((a,b) => a.featuredRank - b.featuredRank)} />
         </section>
     )
 }
