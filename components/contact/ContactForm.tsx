@@ -67,7 +67,7 @@ export default function ContactForm() {
                         Let's work together
                     </h2>
                     <p className='text-sm'>
-                        Open to junior full-stack roles and freelance projects.
+                        Open to junior roles and freelance projects.
                     </p>
                 </div>
             </motion.div>
