@@ -2,6 +2,53 @@ import { ProjectsDataType } from "@/type/type";
 
 export const projectsData: ProjectsDataType[] = [
     {
+        isFeatured: false,
+        featuredRank: 0,
+        filename: 'Portfolio',
+        name: 'Portfolio',
+        type: 'Full-stack web app',
+        year: 2026,
+        liveSite: 'https://wwt-portfolio.vercel.app/',
+        gitHub: 'https://github.com/wengti/portfolio',
+        demo: '',
+
+        description: 'The portfolio site you are on right now — built with Next.js and Framer Motion, featuring per-project detail pages, a functional contact form, and a scroll-aware header.',
+
+        tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Resend'],
+
+        overview: 'A personal portfolio built from scratch with Next.js App Router, showcasing projects with individual detail pages that break down tech stack, features, and engineering challenges. Includes a working contact form backed by Resend for server-side email delivery, smooth animations via Framer Motion, and a data-driven architecture where all project content lives in centralised TypeScript files for easy updates.',
+
+        feature: [
+            'Per-project detail pages with feature breakdown, tech stack, and engineering challenges',
+            'Functional contact form with server-side email delivery via Resend',
+            'Scroll-aware header — hides on scroll down, reappears on scroll up',
+            'Auto-playing project gallery carousel',
+            'Mobile-responsive layout with hamburger menu',
+            'Centralised data files for easy project and timeline management',
+        ],
+
+        fullTech: {
+            framework: 'Next.js',
+            language: 'TypeScript',
+            styling: 'Tailwind CSS',
+            animation: 'Framer Motion',
+            email: 'Resend, React Email',
+            ui: 'Tailgrids',
+            deployment: 'Vercel',
+        },
+
+        challenges: [
+            'Scroll-aware header behaviour',
+            'React Email incompatibility with standard styling',
+        ],
+
+        solutions: [
+            'Tracked scroll direction in a useEffect by comparing the current scroll position against the previous frame, then used Framer Motion to animate the header in and out based on the direction state. This reclaims vertical space on scroll while keeping the nav accessible whenever the user scrolls back up.',
+            'React Email does not support standard HTML elements or Tailwind classes — it requires its own component library and inline CSS for styling. Rewrote the email template using React Email\'s proprietary components to ensure consistent rendering across different email clients.',
+        ],
+    },
+
+    {
         isFeatured: true,
         featuredRank: 4,
         filename: 'Lyricfy-JP',
@@ -138,8 +185,8 @@ export const projectsData: ProjectsDataType[] = [
     },
 
     {
-        isFeatured: true,
-        featuredRank: 3,
+        isFeatured: false,
+        featuredRank: 0,
         filename: 'Weather-Now',
         name: 'Weather Now',
         type: 'Frontend web app',
@@ -327,7 +374,7 @@ export const projectsData: ProjectsDataType[] = [
 
     {
         isFeatured: true,
-        featuredRank: 5,
+        featuredRank: 4,
         filename: 'FYP',
         name: 'Cost Effective Fault Detection on Solar Panel using YOLO',
         type: 'Research',
@@ -382,6 +429,185 @@ export const projectsData: ProjectsDataType[] = [
             'W. T. Wong, S. K. Phang, N. Sariff, H. S. Husin, and B. J. Pandian, "Enhanced Fault Detection for Solar Panels with YOLOv7 on RGB Images Using Augmentation Strategies and an Early Stopper," Artificial Intelligence in Instrumentation, Control and Automation, pp. 503-520, 2026.',
         ]
     },
+    {
+        isFeatured: true,
+        featuredRank: 5,
+        filename: 'EEGP',
+        name: 'Revolutionizing Transportation: A Passenger-Carrying Drone',
+        type: 'Engineering group project',
+        year: 2024,
+        liveSite: '',
+        gitHub: '',
+        demo: 'https://www.youtube.com/watch?v=H8XhMyZ4DpA',
+
+        description: 'A two-track engineering project that designed a full-scale passenger eVTOL drone on paper and built a scaled-down hexacopter prototype from scratch — validating flight physics, control systems, and structural design through real-world testing.',
+
+        tech: ['MATLAB Simulink', 'SolidWorks', 'ArduPilot', 'Mission Planner', 'Pixhawk', '3D Printing'],
+
+        overview: "A Taylor's University final-year engineering group project tackling passenger drone design from two angles simultaneously: a comprehensive paper design of a full-scale eVTOL capable of carrying 160 kg, and a functional F550 hexacopter prototype built to validate the underlying physics and control systems at scale. The prototype used a Pixhawk flight controller running ArduPilot firmware, calibrated and monitored through Mission Planner, with MATLAB Simulink providing a 3D digital twin environment to simulate stability before physical testing. Flight endurance testing achieved 15.27 minutes of hover time, within 8.7% of the calculated 16.73-minute estimate.",
+
+        feature: [
+            'Full-scale passenger eVTOL paper design — 160 kg payload capacity, hexacopter configuration for motor redundancy',
+            'Scaled-down F550 hexacopter prototype — 72:1 mass ratio to passenger drone, built and flight-tested',
+            'MATLAB Simulink 3D digital twin — CoG analysis and flight stability simulation before physical build',
+            'SolidWorks 3D modelling of both drone configurations, imported directly into Simulink',
+            'Pixhawk 2.4.8 + ArduPilot flight controller with 5-condition failsafe system (radio, battery, GCS, EKF, vibration)',
+            'CRSF-to-PWM protocol bridging via ArduPilot firmware parameter configuration',
+            'Holybro 433 MHz telemetry link for real-time ground control during flight',
+            '3D-printed aerodynamic housing designed in collaboration with a partnered ME team',
+            'Flight endurance test achieving 15.27 min hover — 8.7% deviation from calculated 16.73 min estimate',
+        ],
+
+        fullTech: {
+            simulation: 'MATLAB Simulink',
+            modelling: 'SolidWorks',
+            'flight controller': 'Pixhawk 2.4.8, ArduPilot firmware',
+            'ground control': 'Mission Planner',
+            frame: 'F550 hexacopter',
+            propulsion: 'A2216 880KV BLDC motors, Hobbywing Skywalker 30A ESC',
+            power: '3S 10000mAh 30C LiPo battery',
+            'RC link': 'Jumper T-Lite V2 transmitter (ExpressLRS 2.4GHz), Radiomaster RP1 V2 receiver',
+            telemetry: 'Holybro Telemetry Radio V3 (433MHz)',
+            manufacturing: '3D printing (PLA)',
+        },
+
+        challenges: [
+            'Centre of gravity imbalance in original custom frame',
+            'RC protocol incompatibility between transmitter and flight controller',
+            'GPS magnetic interference and persistent signal loss',
+        ],
+
+        solutions: [
+            "The initial custom frame design failed CoG analysis in MATLAB Simulink — the forward-heavy mass distribution caused a forward flip during simulation. Differential motor speed compensation was applied as a workaround, but this introduced unintended yaw rotation. The root cause was resolved by switching to the F550 hexacopter frame, whose symmetric arm geometry naturally centred the payload and eliminated both issues without software compensation.",
+            "The Jumper T-Lite V2 transmitter uses the CRSF protocol, while the Pixhawk 2.4.8 flight controller expects PWM input. Direct connection produced no response. The fix was applying ArduPilot's built-in CRSF protocol bridge — by configuring the correct serial port parameters in the firmware (SERIAL_BAUD and SERIAL_PROTOCOL settings), ArduPilot translated incoming CRSF signals to PWM outputs, restoring full RC control without any additional hardware.",
+            "The GPS module suffered persistent magnetic interference from the ESCs and power distribution board, causing unreliable lock and compass errors throughout testing. Elevating the GPS on a dedicated mast provided partial relief by increasing distance from interference sources, but lock quality remained inconsistent. RTL (Return-to-Launch) failsafe mode was disabled as a result — GPS-dependent autonomous flight was deemed unreliable for safe failsafe operation, and all failsafe conditions defaulted to Land mode instead.",
+        ],
+    },
+    {
+        isFeatured: false,
+        featuredRank: 0,
+        filename: 'IRSMS',
+        name: 'Intelligent Road Safety Monitoring System',
+        type: 'University Project',
+        year: 2024,
+        liveSite: '',
+        gitHub: '',
+        demo: 'https://www.youtube.com/watch?v=tecAnkHZPyU',
+        description: "A drone-based road defect detection system that deploys a UAV to autonomously survey roads, uses YOLOv8 to classify potholes, cracks, manholes, and blurred markings, then pins every finding onto an interactive map — giving both road authorities and commuters real-time awareness of hazards before they cause accidents.",
+        tech: ['YOLOv8', 'Python'],
+        overview: "IRSMS was built to address the inefficiency of manual road inspection in Malaysia, where road defects account for over 11% of traffic fatalities. A DJI Air 3 drone captures aerial images at fixed intervals while its embedded GPS logs each shot's coordinates. A Python pipeline on Google Colab then extracts the GPS metadata, renames images with their coordinates, and feeds them through a fine-tuned YOLOv8 model trained on the RDD 2020 dataset — augmented with locally collected Malaysian road defects. Detected defects are plotted onto a Folium leaflet map as an HTML file, accessible from any internet-connected device by both maintenance authorities and road users.",
+        feature: [
+            'UAV aerial image capture with embedded GPS metadata at fixed time intervals',
+            'Automated YOLOv8 detection of 4 defect classes: potholes, cracks, manholes, and blurred road markings',
+            'GPS EXIF extraction and coordinate-based image renaming for traceability',
+            'Interactive virtual map with geotagged defect markers and image previews via Folium',
+            'End-to-end cloud pipeline: DJI Fly App → Google Drive → Google Colab → HTML map',
+            'Dataset augmented with Malaysia-specific road defects for local accuracy',
+        ],
+        fullTech: {
+            drone: 'DJI Air 3',
+            mlModel: 'finetuned YOLOv8',
+            language: 'Python',
+            libraries: 'Pillow (PIL), Folium, OS',
+            cloud: 'Google Drive, Google Colab (Nvidia Tesla T4 GPU)',
+            dataset: 'Road Damage Dataset (RDD) 2020',
+        },
+        challenges: [
+            'Selecting the right detection model for drone-captured aerial imagery'
+        ],
+        solutions: [
+            'Conducted a systematic literature review comparing YOLOv5, YOLOv7, YOLOv8, and RCNN variants across accuracy, inference speed, and suitability for real-time aerial detection. Selected YOLOv8 based on its leading mAP of 91.1% and lightweight inference time of 8.8ms per image while remaining compatible with Google Colab GPU resources.',
+        ]
+    },
+    {
+        isFeatured: false,
+        featuredRank: 0,
+        filename: 'FnB-Robot',
+        name: 'Food and Beverage Robot',
+        type: 'Club Project',
+        year: 2022,
+        liveSite: '',
+        gitHub: '',
+        demo: 'https://www.youtube.com/watch?v=gu9gtm7yNtA',
+        description: 'A robotics system that automates burger assembly end-to-end — customers pick their ingredients via a mobile app, and a network of Arduino-controlled stations guided by a robotic arm builds the burger without any human intervention.',
+        tech: ['Arduino', 'Raspberry Pi', 'I2C Protocol', 'Stepper & Servo Motors'],
+        overview: "Built for Taylor's Robotics Club Engineering Fair 2022, this project automates the full burger assembly pipeline. Customers customise their burger through a mobile app (up to 5 ingredients), which sends the order to a Raspberry Pi coordinator. The Pi then orchestrates 6 dedicated stations — bun, patty, two sauce dispensers, and two salad dispensers — each driven by its own Arduino over I2C. A laser-cut robotic arm handles the physical assembly. The system was designed to reduce human contact in food handling, cut waiting time, and lower operational costs for SMEs.",
+        feature: [
+            'Mobile app ordering with up to 5 customisable ingredients',
+            'Raspberry Pi central coordinator for assembly sequencing',
+            '6 dedicated ingredient stations (bun, patty, sauce x2, salad x2)',
+            'Laser-cut 4-DOF robotic arm',
+            'I2C communication network across all Arduino station controllers',
+            'Configurable assembly sequence supporting any ingredient combination',
+        ],
+        fullTech: {
+            microcontroller: 'Arduino Uno (per station), Raspberry Pi (central coordinator)',
+            communication: 'I2C (inter-Arduino), Serial (RPi ↔ Arduino)',
+            actuation: '28BYJ-48 Stepper Motor, SG90 Servo Motor, NEMA Stepper Motor',
+            hardware: 'Laser-cut wooden structure',
+            software: 'Arduino C/C++, Python (Raspberry Pi)',
+            interface: 'Mobile app (order input)',
+        },
+        challenges: [
+            'I2C multi-node coordination',
+            'Hardcoded assembly sequence with no customisation',
+            'Motor timing and precision across stations',
+        ],
+        solutions: [
+            'Designed an I2C protocol where each ingredient station runs as a slave Arduino node, with a central master Arduino issuing commands sequentially. Each node executes its action and sends an acknowledgement before the master advances to the next station, ensuring ordered and reliable assembly.',
+            "Rewrote the assembly sequencing codebase from a fixed routine into a configurable system that reads the customer's ingredient selections from the app and dynamically constructs the execution order, enabling any valid combination of the 5 available ingredients to be assembled correctly.",
+            'Tuned step counts and delay intervals for the 28BYJ-48 and NEMA stepper motors, and calibrated SG90 servo angles per station to achieve consistent dispensing volumes and repeatable robotic arm positioning across the full assembly cycle.',
+        ],
+    },
+    {
+        isFeatured: false,
+        featuredRank: 0,
+        filename: 'AUPOG',
+        name: "Autism's Personal Organized Guardian",
+        type: 'University Project',
+        year: 2021,
+        liveSite: '',
+        gitHub: '',
+        demo: '',
+
+        description: 'A prototype wearable device built for children with autism — continuously tracking heart rate and motion, and relaying the data wirelessly to a parent-facing monitoring interface in real time, at a fraction of the cost of existing commercial solutions.',
+
+        tech: ['Arduino', 'MPU 6050', 'XD68C Pulse Sensor', 'HC-05 Bluetooth'],
+
+        overview: "Autism's Personal Organized Guardian (AUPOG) was built to give parents of autistic children a way to remotely monitor their child's physical wellbeing without constant close supervision. The wearable integrates an XD68C pulse sensor for continuous heart rate tracking and an MPU 6050 gyroscope for motion and activity detection. Sensor data is transmitted wirelessly via HC-05 Bluetooth to a companion monitoring interface, allowing parents to spot anomalies such as elevated heart rate or abnormal movement patterns that may signal distress or a medical event — all built within a strict RM200 budget as a practical alternative to the commercial solutions that remain out of reach for most families.",
+
+        feature: [
+            'Real-time heart rate monitoring via XD68C pulse sensor',
+            'Motion and activity tracking via MPU 6050 gyroscope and accelerometer',
+            'Wireless Bluetooth data transmission to a companion parent monitoring interface',
+            'Wearable form factor designed for comfort during continuous use',
+            'Affordable hardware design as an alternative to commercial monitoring products',
+            'Remote health status visibility for parents and caregivers',
+        ],
+
+        fullTech: {
+            microcontroller: 'Arduino',
+            sensors: 'MPU 6050 (Gyroscope / Accelerometer), XD68C (Pulse Sensor)',
+            communication: 'HC-05 Bluetooth Module',
+        },
+
+        challenges: [
+            'RM200 budget constraint',
+            'Sensor integration and signal accuracy',
+            'Reliable wireless data transmission',
+            'Wearable form factor constraints',
+        ],
+
+        solutions: [
+            'Worked within a strict RM200 budget by selecting widely available, low-cost off-the-shelf components — the MPU 6050, XD68C pulse sensor, and HC-05 Bluetooth module — each costing under a few ringgit individually. This kept the total hardware cost well within budget while covering all required sensing and communication functions.',
+            'Configured the MPU 6050 over I2C and the XD68C over analogue input, tuning sampling rates and applying noise filtering to produce stable, continuous readings suitable for a child in active movement.',
+            'Paired the Arduino with an HC-05 Bluetooth module to relay live sensor data from the wearable unit to the companion monitoring interface, ensuring parents receive up-to-date health readings in real time.',
+            'Kept the hardware footprint minimal — compact component layout and managed wiring — to reduce the physical bulk and weight of the wearable, an important consideration for autistic children who are often sensitive to unfamiliar tactile sensations.',
+        ],
+    },
+
+
+
 
 
 

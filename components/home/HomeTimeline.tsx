@@ -40,7 +40,7 @@ export default function HomeTimeline() {
 
                                     {/* Start - End */}
                                     <p className='text-letter-yellow text-sm'>
-                                        {data.start}{data.end ? `- ${data.end}` : ''}
+                                        {data.start}{data.end ? ` - ${data.end}` : ''}
                                     </p>
                                 </div>
 
