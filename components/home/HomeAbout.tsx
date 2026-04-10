@@ -32,7 +32,7 @@ export default function HomeAbout() {
                     transition={{ duration: 1, delay: 0.2 }}
                 >
                     <p className='text-sm mt-2'>
-                        EEE grad pivoting into full-stack web development. Buildring real products with React, Next.js & Supabase.
+                        EEE grad dabbling into full-stack web development. Building real products with React, Next.js & Supabase.
                     </p>
                 </motion.div>
 
