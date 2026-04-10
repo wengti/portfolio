@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 
 
-export default function HomeProjectsGrid({ projectsData, isLastItemHidden }: { projectsData: ProjectsDataType[], isLastItemHidden: boolean }) {
+export default function HomeProjectsGrid({ projectsData }: { projectsData: ProjectsDataType[]}) {
     return (
         /* Grid Area */
         < div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 content-center max-w-400 mx-auto" >
@@ -15,8 +15,6 @@ export default function HomeProjectsGrid({ projectsData, isLastItemHidden }: { p
             {
                 projectsData.map((data, idx) => {
 
-                    const extraClsName = (idx === projectsData.length - 1 && isLastItemHidden) ? 'hidden sm:flex lg:hidden' : ''
-
                     return (
                         <Link
                             href={`/projects/${data.filename}`}
@@ -24,7 +22,7 @@ export default function HomeProjectsGrid({ projectsData, isLastItemHidden }: { p
                             key={data.name}
                         >
                             <motion.div
-                                className={`flex flex-col gap-2 bg-card-black py-2 border-2 border-edge-yellow rounded-2xl ${extraClsName}`}
+                                className={`flex flex-col gap-2 bg-card-black py-2 border-2 border-edge-yellow rounded-2xl `}
                                 initial={{ opacity: 0, y: 25 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.25 * idx }}

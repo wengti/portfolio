@@ -86,6 +86,149 @@ export const projectsData: ProjectsDataType[] = [
 
     {
         isFeatured: true,
+        filename: 'BG2SELL',
+        name: 'BG2SELL',
+        type: 'Full-stack web app',
+        year: 2026,
+        liveSite: 'https://bg2sell.onrender.com/',
+        gitHub: 'https://github.com/wengti/bg-site',
+        demo: 'https://www.youtube.com/watch?v=I5TpeobEpMc',
+        description: 'A B2C e-commerce platform for buying pre-owned board games. It demonstrates full-stack JavaScript development with features like user authentication, product search, shopping cart, and payment processing.',
+        tech: ['Express.js', 'PostgreSQL', 'Stripe'],
+        overview: 'BG2SELL is a full-stack e-commerce site where users can browse, search, and purchase secondhand board games end-to-end. Product discovery is powered by accent-insensitive search, making lookups flexible regardless of special characters in game titles. The cart and authentication state persist across sessions using PostgreSQL-backed session storage rather than in-memory storage, keeping the app production-ready. Security is treated seriously throughout — bcrypt password hashing, HttpOnly session cookies, and input sanitization are applied at every entry point.',
+        feature: [
+            'Product catalog browsing with accent-insensitive search',
+            'Shopping cart with persistent session state',
+            'Real payment processing via Stripe',
+            'User authentication with bcrypt password hashing',
+            'PostgreSQL-backed session storage for scalability',
+            'Mobile-responsive design',
+        ],
+
+        fullTech: {
+            runtime: 'Node.js',
+            framework: 'Express.js',
+            language: 'JavaScript',
+            database: 'PostgreSQL (Supabase)',
+            payment: 'Stripe',
+            deployment: 'Render',
+        },
+
+        challenges: [
+            'Session persistence across server restarts',
+            'Flexible product search with accent support',
+            'Secure Stripe checkout integration',
+            'Route protection and input sanitization',
+        ],
+
+        solutions: [
+            'Used connect-pg-simple to store sessions directly in PostgreSQL instead of server memory, so sessions survive restarts and the app can scale horizontally without losing login state.',
+            'Implemented accent-insensitive text matching in PostgreSQL queries, allowing users to find products regardless of diacritics or special characters in their search terms.',
+            'Integrated Stripe on both client (@stripe/stripe-js) and server (stripe SDK) sides, keeping secret keys server-only and handling the full payment lifecycle through a dedicated checkout route.',
+            'Built a middleware-based auth layer to guard all protected routes, paired with bcryptjs for password hashing and the validator library for input sanitization to prevent injection attacks.',
+        ],
+    },
+
+    {
+        isFeatured: true,
+        filename: 'Lyricfy-JP',
+        name: 'Lyricfy-JP',
+        type: 'Full-stack web app',
+        year: 2026,
+        liveSite: 'https://lyrical-jp.vercel.app',
+        gitHub: 'https://github.com/wengti/lyricfy-jp',
+        demo: '',
+
+        description: 'A Japanese learning app that turns your Spotify library into a classroom — displaying real-time synced lyrics with furigana and English translations, letting you capture vocabulary mid-song and drill it later with flashcards.',
+
+        tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Spotify API', 'Google Gemini', 'Claude Code'],
+
+        overview: "Lyricfy JP was built around a simple idea: the best way to absorb a language is through content you actually enjoy. It connects to Spotify, pulls live lyrics from lrclib.net (with Genius as a fallback), and overlays furigana and English translations in sync with playback. Highlighted phrases are sent to Gemini for AI-generated readings, translations, and example sentences — then saved to a personal dictionary with spaced repetition flashcards for review.",
+
+        feature: [
+            'Real-time lyrics synced to Spotify playback',
+            'Furigana and English translation overlay',
+            'AI-powered vocabulary capture — highlight any phrase to get readings, translations, and example sentences',
+            'Personal dictionary with search, tagging, and sort by success rate or date',
+            'Spaced repetition flashcard quizzes (JP→EN and EN→JP modes)',
+            'Library browsing without active playback',
+        ],
+
+        fullTech: {
+            framework: 'Next.js',
+            language: 'TypeScript',
+            backend: 'Supabase',
+            AI: 'Google Gemini 2.0 Flash via OpenRouter, Claude Code',
+            styling: 'Tailwind CSS',
+            APIs: 'Spotify Web API, lrclib.net',
+            deployment: 'Vercel',
+        },
+
+        challenges: [
+            'Instruction overload degrading output quality',
+            'Higher-than-expected token usage',
+            'Knowing when to stop prompting and intervene manually',
+            'Inconsistent AI output format breaking UI parsing',
+        ],
+
+        solutions: [
+            'Learned to start with a broad direction and layer in specifics incrementally across iterations, rather than front-loading all requirements at once. Claude Code follows instructions more reliably when each prompt has a narrow, well-defined scope.',
+            'Discovered that effective AI-assisted development demands upfront planning — vague intent gets expensive fast. Mapping out features and data flow before implementation reduced wasted back-and-forth and helped stay within a limited token budget.',
+            'Maintained active code literacy throughout the build so that when Claude Code stalled on a bug, I could identify and fix it directly rather than burning tokens on diminishing prompts. Over-delegating without understanding the codebase creates both technical debt and token waste.',
+            'Worked through the inconsistency with Claude Code iteratively — describing the format failures I was seeing and letting it propose and refine the fix. This reinforced a key pattern: when AI-generated output is unreliable, the solution is often better enforced at the code level rather than purely through tighter prompting.',
+        ],
+    },
+
+    {
+        isFeatured: true,
+        filename: 'Weather-Now',
+        name: 'Weather Now',
+        type: 'Frontend web app',
+        year: 2026,
+        liveSite: 'https://weather-app-2ihi.onrender.com',
+        gitHub: 'https://github.com/wengti/weather-app',
+        demo: '',
+
+        description: 'A clean, responsive weather app with real-time conditions, 7-day forecasts, and hourly breakdowns — with automatic geolocation, bookmarkable locations, unit switching, and dark mode support.',
+
+        tech: ['React', 'TypeScript', 'Tailwind CSS', 'Open-Meteo API'],
+
+        overview: 'Weather App pulls live data from the Open-Meteo API to display current conditions, a 7-day daily forecast, and hourly predictions for any location. It detects your location automatically on load, supports bookmarking multiple cities, and handles unit conversion between metric and imperial. Built with React and TypeScript with a focus on correctness — covering edge cases like timezone-aware time rendering and typed async error handling.',
+
+        feature: [
+            'Current weather conditions with real-time data',
+            '7-day daily forecast and hourly breakdown',
+            'Automatic geolocation on page load',
+            'Bookmarkable locations for quick access',
+            'Metric and imperial unit toggle',
+            'Timezone-aware time display per location',
+            'Dark and light mode',
+            'Fully responsive layout',
+        ],
+
+        fullTech: {
+            framework: 'React, Vite',
+            language: 'TypeScript',
+            styling: 'Tailwind CSS',
+            API: 'Open-Meteo',
+            deployment: 'Render',
+        },
+
+        challenges: [
+            'Geolocation API incompatibility with async/await',
+            'Timezone mismatch between browser and server environments',
+            'Typed error handling in async flows',
+        ],
+
+        solutions: [
+            'The browser Geolocation API is callback-based and does not return a Promise, making it incompatible with async/await out of the box. Wrapped it in a custom Promise to normalise the interface and allow it to integrate cleanly with the rest of the async data-fetching logic.',
+            'JavaScript\'s Date object behaves differently depending on the runtime — browsers convert to the local system timezone automatically, while Node.js defaults to GMT+0. Handled this explicitly by passing timezone identifiers from the API response into date formatting calls, ensuring displayed times always reflect the target location rather than the user\'s machine.',
+            'Used TypeScript union types with useActionState() to model both success and error states explicitly, and applied instanceof checks when catching exceptions to safely narrow error types — avoiding the pitfall of treating all caught values as Error objects.',
+        ],
+    },
+
+    {
+        isFeatured: true,
         filename: 'FYP',
         name: 'Cost Effective Fault Detection on Solar Panel using YOLO',
         type: 'Research',
@@ -141,48 +284,5 @@ export const projectsData: ProjectsDataType[] = [
         ]
     },
 
-    {
-        isFeatured: true,
-        filename: 'BG2SELL',
-        name: 'BG2SELL',
-        type: 'Full-stack web app',
-        year: 2026,
-        liveSite: 'https://bg2sell.onrender.com/',
-        gitHub: 'https://github.com/wengti/bg-site',
-        demo: 'https://www.youtube.com/watch?v=I5TpeobEpMc',
-        description: 'A B2C e-commerce platform for buying pre-owned board games. It demonstrates full-stack JavaScript development with features like user authentication, product search, shopping cart, and payment processing.',
-        tech: ['Express.js', 'PostgreSQL', 'Stripe'],
-        overview: 'BG2SELL is a full-stack e-commerce site where users can browse, search, and purchase secondhand board games end-to-end. Product discovery is powered by accent-insensitive search, making lookups flexible regardless of special characters in game titles. The cart and authentication state persist across sessions using PostgreSQL-backed session storage rather than in-memory storage, keeping the app production-ready. Security is treated seriously throughout — bcrypt password hashing, HttpOnly session cookies, and input sanitization are applied at every entry point.',
-        feature: [
-            'Product catalog browsing with accent-insensitive search',
-            'Shopping cart with persistent session state',
-            'Real payment processing via Stripe',
-            'User authentication with bcrypt password hashing',
-            'PostgreSQL-backed session storage for scalability',
-            'Mobile-responsive design',
-        ],
 
-        fullTech: {
-            runtime: 'Node.js',
-            framework: 'Express.js',
-            language: 'JavaScript',
-            database: 'PostgreSQL (Supabase)',
-            payment: 'Stripe',
-            deployment: 'Render',
-        },
-
-        challenges: [
-            'Session persistence across server restarts',
-            'Flexible product search with accent support',
-            'Secure Stripe checkout integration',
-            'Route protection and input sanitization',
-        ],
-
-        solutions: [
-            'Used connect-pg-simple to store sessions directly in PostgreSQL instead of server memory, so sessions survive restarts and the app can scale horizontally without losing login state.',
-            'Implemented accent-insensitive text matching in PostgreSQL queries, allowing users to find products regardless of diacritics or special characters in their search terms.',
-            'Integrated Stripe on both client (@stripe/stripe-js) and server (stripe SDK) sides, keeping secret keys server-only and handling the full payment lifecycle through a dedicated checkout route.',
-            'Built a middleware-based auth layer to guard all protected routes, paired with bcryptjs for password hashing and the validator library for input sanitization to prevent injection attacks.',
-        ],
-    },
 ]
