@@ -50,7 +50,7 @@ export const projectsData: ProjectsDataType[] = [
 
     {
         isFeatured: true,
-        featuredRank: 4,
+        featuredRank: 2,
         filename: 'Lyricfy-JP',
         name: 'Lyricfy-JP',
         type: 'Full-stack web app',
@@ -324,10 +324,61 @@ export const projectsData: ProjectsDataType[] = [
             'The Open Trivia Database returns question text and answers as HTML-encoded strings (e.g. &amp;, &#039;). Used the html-entities library to decode all API responses before storing them in state, preventing raw entity strings from rendering in the UI.',
         ],
     },
-
     {
         isFeatured: true,
-        featuredRank: 2,
+        featuredRank: 3,
+        filename: 'PopChoice',
+        name: 'PopChoice',
+        type: 'Full-stack web app',
+        year: 2024,
+        liveSite: 'https://movie-recommender-51m.pages.dev/',
+        gitHub: 'https://github.com/wengti/movie-recommender',
+        demo: 'https://www.youtube.com/watch?v=LKlLZ2l6Sj0',
+
+        description: 'An AI-powered group movie recommender — each person submits their preferences, and a RAG pipeline semantically matches them against a vector database of films before GPT selects the best picks and explains why.',
+
+        tech: ['JavaScript', 'OpenAI API', 'Supabase', 'LangChain', 'Cloudflare Workers', 'OMDB API'],
+
+        overview: "Movie Recommender uses Retrieval-Augmented Generation to suggest films tailored to your group's collective tastes and available time. After collecting each person's preferences — favourite movies, mood, and preferred actors or directors — the app converts the aggregated input into a vector embedding and runs a semantic similarity search against a database of movie descriptions stored in Supabase pgvector. The most relevant matches are then passed to GPT, which selects the best picks and explains why each film suits the group. Movie posters are fetched from OMDB and presented in an interactive carousel. All API credentials are kept server-side via a Cloudflare Worker, so nothing sensitive ever reaches the browser.",
+
+        feature: [
+            'Group preference collection — time availability and individual tastes per member',
+            'Per-member preference survey — favourite movie, mood, and preferred actor or director',
+            'RAG-powered recommendation — semantic vector search over a Supabase pgvector movie database',
+            'GPT-generated explanation for each recommendation',
+            'Movie posters fetched and displayed via OMDB API',
+            'Interactive recommendation carousel with next and previous navigation',
+            'Cloudflare Worker backend keeping all API keys off the client',
+        ],
+
+        fullTech: {
+            language: 'JavaScript',
+            build: 'Vite',
+            AI: 'OpenAI API (Embeddings + GPT)',
+            RAG: 'LangChain (Text Splitters)',
+            database: 'Supabase',
+            backend: 'Cloudflare Workers',
+            APIs: 'OMDB API',
+            deployment: 'Cloudflare Pages',
+        },
+
+        challenges: [
+            'API key exposure in client-side code',
+            'Keyword search being insufficient for preference matching',
+            'Aggregating preferences from multiple users into a single query',
+            'Unreliable GPT output format breaking carousel parsing',
+        ],
+
+        solutions: [
+            'Moved all API calls — OpenAI embeddings, Supabase vector queries, and GPT inference — behind a Cloudflare Worker, so credentials never leave the server. The frontend makes a single POST to the worker endpoint and receives the finished recommendations.',
+            'Implemented RAG using OpenAI\'s text embedding model and Supabase pgvector. User preferences are converted to a vector embedding at query time and matched against pre-embedded movie descriptions via cosine similarity — retrieving semantically relevant films even when no exact keywords overlap.',
+            'Collected each group member\'s preferences individually through a multi-step survey, then serialised all responses into a single natural language query combining the group\'s tastes and available watch time. This single query drives the full RAG retrieval pipeline.',
+            'Enforced a structured delimiter format in the GPT prompt — `movie_name1#reason1#movie_name2#reason2...` — making the client-side parsing deterministic and resilient to natural language variation in the model\'s output.',
+        ],
+    },
+    {
+        isFeatured: false,
+        featuredRank: 0,
         filename: 'BG2SELL',
         name: 'BG2SELL',
         type: 'Full-stack web app',
