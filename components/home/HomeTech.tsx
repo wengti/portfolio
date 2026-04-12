@@ -33,6 +33,11 @@ export default function HomeTech() {
                 />
 
                 <TechStackGroup
+                    title='AI & Machine Learning'
+                    techItems={techData.ai}
+                />
+
+                <TechStackGroup
                     title='Others'
                     techItems={techData.others}
                 />

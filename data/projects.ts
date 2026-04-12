@@ -330,14 +330,14 @@ export const projectsData: ProjectsDataType[] = [
         filename: 'PopChoice',
         name: 'PopChoice',
         type: 'Full-stack web app',
-        year: 2024,
+        year: 2025,
         liveSite: 'https://movie-recommender-51m.pages.dev/',
         gitHub: 'https://github.com/wengti/movie-recommender',
         demo: 'https://www.youtube.com/watch?v=LKlLZ2l6Sj0',
 
         description: 'An AI-powered group movie recommender — each person submits their preferences, and a RAG pipeline semantically matches them against a vector database of films before GPT selects the best picks and explains why.',
 
-        tech: ['JavaScript', 'OpenAI API', 'Supabase', 'LangChain', 'Cloudflare Workers', 'OMDB API'],
+        tech: ['JavaScript', 'Retrieval-Augmented Generation (RAG)', 'OpenAI API', 'Supabase', 'LangChain', 'Cloudflare Workers', 'OMDB API'],
 
         overview: "Movie Recommender uses Retrieval-Augmented Generation to suggest films tailored to your group's collective tastes and available time. After collecting each person's preferences — favourite movies, mood, and preferred actors or directors — the app converts the aggregated input into a vector embedding and runs a semantic similarity search against a database of movie descriptions stored in Supabase pgvector. The most relevant matches are then passed to GPT, which selects the best picks and explains why each film suits the group. Movie posters are fetched from OMDB and presented in an interactive carousel. All API credentials are kept server-side via a Cloudflare Worker, so nothing sensitive ever reaches the browser.",
 
