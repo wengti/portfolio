@@ -1,6 +1,110 @@
 import { ProjectsDataType } from "@/type/type";
 
 export const projectsData: ProjectsDataType[] = [
+
+    {
+        isFeatured: true,
+        featuredRank: 3,
+        filename: 'NextJS-RAG',
+        name: 'NextJS Doc Helper',
+        type: 'RAG-based AI chat app',
+        year: 2026,
+        liveSite: 'https://rag-nextjs-assistant.streamlit.app/',
+        gitHub: 'https://github.com/wengti/langchain-tutorial',
+        demo: '',
+
+        description: 'RAG Documentation Helper is an AI assistant built to answer user questions about Next.js by querying pre-scraped, embedded documentation stored in a vector database. It uses a RAG + ReAct loop, giving the agent the flexibility to retrieve context only when needed. Source attribution is surfaced directly in the chat, and the interface is built with Streamlit.',
+
+        tech: ['Python', 'LangChain', 'Streamlit', 'Tavily', 'OpenAI API', 'Pinecone'],
+
+        overview: "RAG Documentation Helper is an AI-powered chat assistant for answering questions about Next.js. Instead of relying on general training knowledge, it queries pre-scraped Next.js documentation embedded and stored in a Pinecone vector database, grounding every answer in accurate source material. \nThe agent uses a RAG + ReAct loop, deciding intelligently when retrieval is actually needed rather than fetching context on every query. Every response also surfaces its source attribution directly in the chat, giving users full transparency into where the information comes from. The interface is built with Streamlit.",
+        
+        feature: [
+            'Chat interface for querying Next.js documentation',
+            'RAG + ReAct loop for context-aware, on-demand retrieval',
+            'Pre-scraped Next.js docs embedded and stored in Pinecone vector database',
+            'Source attribution displayed per AI response',
+            'Configurable hyperparameters for data scraping and storage',
+        ],
+
+
+        fullTech: {
+            language: 'Python',
+            AI: 'OpenAI',
+            framework: 'LangChain',
+            vectorDB: 'Pinecone',
+            search: 'Tavily',
+            ui: 'Streamlit',
+            deployment: 'Streamlit Community Cloud',
+        },
+
+        challenges: [
+            'Scraping and embedding large volumes of documentation efficiently',
+            'Avoiding unnecessary retrieval on every agent query',
+            'Surfacing source attribution from LangChain\'s response format to the frontend',
+            'Configuring and tuning vector storage for accurate retrieval',
+        ],
+
+        solutions: [
+            'Used asyncio to parallelise scraping and embedding tasks, significantly reducing ingestion time compared to sequential processing. Hyperparameters such as chunk size and overlap were exposed as configurable values to give fine-grained control over how documentation is split and stored in Pinecone.',
+            'Implemented a RAG + ReAct loop where retrieval is a tool at the agent\'s disposal rather than a fixed step in every query. The agent reasons about whether fetching from the vector store is necessary before doing so, reducing redundant lookups and keeping responses efficient.',
+            'Used LangChain\'s response_format="content_and_artifact" to separate the AI\'s answer from its source metadata. The artifact portion, containing the retrieved document sources, was extracted and passed to the Streamlit frontend for display alongside each response.',
+            'Tuned Pinecone retrieval by adjusting chunk size, overlap, and the number of returned documents (top-k) to balance retrieval precision against context window usage, ensuring the agent receives relevant excerpts without being overwhelmed by noise.',
+        ],
+    },
+
+    {
+        isFeatured: true,
+        featuredRank: 2,
+        filename: 'Wt-chat',
+        name: 'WT-Chat',
+        type: 'AI chat app',
+        year: 2026,
+        liveSite: 'https://wt-chat.vercel.app/',
+        gitHub: 'https://github.com/wengti/wt-chat',
+        demo: 'https://www.youtube.com/watch?v=mA2SR8Omy-s',
+
+        description: 'A simple chat interface for user to interact with 2 different LLM endpoints, namely Gemini and ChatGPT.',
+
+        tech: ['Next.js', 'FastAPI', 'Tailwind CSS', 'Pydantic', 'Pytest', 'OpenAI API', 'Gemini API'],
+
+        overview: "wt-chat gives users more agency than typical AI chat apps through a combination of standout features. Users can switch between two live LLM backends — Google's Gemini and OpenAI's GPT — and tune the response tone to either playful or serious, adapting the AI's personality to their needs. Responses stream in real-time, reducing wait time, while each conversation receives an auto-generated title for effortless organization. Secure user authentication keeps conversations private, and a dark/light mode toggle ensures visual comfort. Together, these features make wt-chat a flexible, user-centric alternative to single-model chat interfaces.",
+        feature: [
+            "Authentication and Authorization",
+            "Dark / Light mode",
+            "Chat with Gemini (gemini-3-flash-preview) or GPT (gpt-5.4-nano)",
+            "Get a response in playful or serious manner.",
+            "Generation of title for each conversation.",
+            "Receiving response in chunks via Streaming.",
+        ],
+
+        fullTech: {
+            framework: 'Next.js',
+            backend: 'FastAPI',
+            language: 'TypeScript, Python',
+            AI: 'OpenAI, Gemini',
+            styling: 'Tailwind CSS',
+            testing: 'Pytest',
+            ui: 'Tailgrids',
+            deployment: 'Render + Vercel',
+        },
+
+        challenges: [
+            'Streaming LLM responses across a buffered deployment environment',
+            'Managing conversation history across multiple LLM provider APIs',
+            'Testing LLM endpoints without incurring excessive API costs',
+            'CORS configuration and validation in FastAPI',
+        ],
+
+        solutions: [
+            'Implemented token-by-token streaming via FastAPI\'s StreamingResponse and decoded chunks on the frontend using the Web Streams API with a TextDecoder. Added a deliberate delay between chunks to simulate smooth streaming, compensating for Render\'s response buffer that batches all tokens before delivery.',
+            'Normalised chat history into a shared HistoryEntry format, then mapped it to each provider\'s required input type at the model layer — using EasyInputMessageParam for GPT and the equivalent structure for Gemini — keeping the frontend agnostic of provider-specific contracts.',
+            'Designed tests to mock LLM calls using pytest-mock\'s mocker.patch() and mocker.Mock(), replacing live API calls with controlled fake responses. Reserved direct endpoint hits only for integration checks, minimising cost while still verifying that the wiring between the app and each LLM provider is correct.',
+            'Added CORSMiddleware to the FastAPI app with an explicit allowlist of frontend origins. Validated the setup in pytest using two complementary strategies: checking for access-control-allow-origin headers in standard responses, and verifying that preflight OPTIONS requests return a 200 status from allowed origins.',
+        ],
+    },
+
+
     {
         isFeatured: false,
         featuredRank: 0,
@@ -49,8 +153,8 @@ export const projectsData: ProjectsDataType[] = [
     },
 
     {
-        isFeatured: true,
-        featuredRank: 2,
+        isFeatured: false,
+        featuredRank: 0,
         filename: 'Lyricfy-JP',
         name: 'Lyricfy-JP',
         type: 'Full-stack web app',
@@ -325,8 +429,8 @@ export const projectsData: ProjectsDataType[] = [
         ],
     },
     {
-        isFeatured: true,
-        featuredRank: 3,
+        isFeatured: false,
+        featuredRank: 0,
         filename: 'PopChoice',
         name: 'PopChoice',
         type: 'Full-stack web app',
