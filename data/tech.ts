@@ -6,5 +6,5 @@ export const techData = {
     fullstack: ['Next.js'],
     ai: ['Python', 'PyTorch', 'LangChain', 'LangGraph', 'Gemini API', 'OpenAI API', 'Scikit-learn', 'Retrieval-Augmented Generation (RAG)', 'You Only Look Once (YOLO)'],
     others: ['Git', 'pytest', 'Assembly', 'Python', 'C', 'Postman', 'Vite', 'Stripe'],
-    highlight: ['Tailwind CSS', 'React', 'React Router', 'PostgreSQL', 'Supabase', 'Next.js', 'Git', 'Python', 'PyTorch', 'OpenAI API', 'Retrieval-Augmented Generation (RAG)', 'You Only Look Once (YOLO)', 'Pinecone', 'LangChain', 'LangGraph', 'pytest']
+    highlight: ['Tailwind CSS', 'React', 'React Router', 'PostgreSQL', 'Supabase', 'Next.js', 'Git', 'Python', 'PyTorch', 'OpenAI API', 'Retrieval-Augmented Generation (RAG)', 'You Only Look Once (YOLO)', 'Pinecone', 'LangChain', 'LangGraph', 'pytest', 'Gemini API']
 }

@@ -23,13 +23,18 @@ export default function HomeTech() {
                 />
 
                 <TechStackGroup
+                    title='Full stack'
+                    techItems={techData.fullstack}
+                />
+
+                <TechStackGroup
                     title='Backend'
                     techItems={techData.backend}
                 />
 
                 <TechStackGroup
-                    title='Full stack'
-                    techItems={techData.fullstack}
+                    title='Database'
+                    techItems={techData.database}
                 />
 
                 <TechStackGroup
