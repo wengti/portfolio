@@ -5,6 +5,57 @@ export const projectsData: ProjectsDataType[] = [
     {
         isFeatured: true,
         featuredRank: 3,
+        filename: 'Github-Note-Helper',
+        name: 'GitHub Note Helper',
+        type: 'RAG-based AI chat app',
+        year: 2026,
+        liveSite: 'https://github-note-helper.vercel.app/',
+        gitHub: 'https://github.com/wengti/github-note-helper',
+        demo: 'https://www.youtube.com/watch?v=pL9cRjuaZUo',
+
+        description: 'GitHub Note Helper is a RAG-based chatbot assistant that provides grounded answers with proper citations. It queries a vector database of personal GitHub notes and uses Tavily for web search, routing intelligently between the two. A multi-step LangGraph workflow handles query refinement, retrieval grading, hallucination checking, and usefulness verification before surfacing a response.',
+
+        tech: ['Next.js', 'TailwindCSS', 'FastAPI', 'LangChain', 'LangGraph', 'Pinecone', 'Tavily'],
+
+        overview: "GitHub Note Helper is a RAG-based chatbot that answers questions grounded in personal GitHub notes, with proper source citations on every response. Rather than relying on general model knowledge, it queries a Pinecone vector database of embedded notes and supplements with real-time Tavily web search when needed.\n\nThe backend is powered by a multi-step LangGraph workflow that refines queries, routes between vector search and web search, grades retrieved context for relevance, and verifies the final response for hallucinations and usefulness before returning it to the user. The frontend is built with Next.js and TailwindCSS, with streaming support and markdown rendering for AI responses.",
+
+        feature: [
+            'RAG-based chat grounded in personal GitHub notes stored in Pinecone',
+            'Intelligent router that decides between vector database search and Tavily web search',
+            'Multi-step LangGraph workflow with query refinement, retrieval grading, hallucination checking, and usefulness verification',
+            'Source citation surfaced per AI response',
+            'Streaming AI responses rendered in markdown format',
+            'Light and dark mode support',
+        ],
+
+        fullTech: {
+            language: 'Python / TypeScript',
+            AI: 'LangChain + LangGraph',
+            vectorDB: 'Pinecone',
+            search: 'Tavily',
+            frontend: 'Next.js + TailwindCSS',
+            backend: 'FastAPI',
+            deployment: 'Vercel (frontend) + Render (backend)',
+        },
+
+        challenges: [
+            'Ensuring every AI response is grounded in retrieved context rather than model hallucination',
+            'Deciding intelligently when to query the vector database versus performing a live web search',
+            'Verifying response quality across multiple dimensions — relevance, hallucination, and usefulness — without excessive latency',
+            'Streaming a response that passes through multiple LangGraph nodes before being finalised',
+        ],
+
+        solutions: [
+            'Implemented a Hallucination Grader Node that inspects the generated response against the retrieved context and redirects back to the Response Generator Node if unsupported content is detected, ensuring outputs stay grounded.',
+            'Added a Router Node early in the LangGraph workflow that analyses the refined query and decides whether to retrieve from Pinecone or invoke the Tavily web search tool, keeping retrieval targeted and efficient.',
+            'Chained a Usefulness Grader Node after hallucination checking to evaluate whether the response actually addresses the user query. If not, the workflow redirects to web search for a broader retrieval pass before regenerating.',
+            'Since the full multi-step workflow completes before a response is returned, word-by-word streaming is simulated on the backend by splitting the final answer and yielding tokens with a small async delay, giving the frontend a natural streaming feel.',
+        ],
+    },
+
+    {
+        isFeatured: false,
+        featuredRank: 0,
         filename: 'NextJS-RAG',
         name: 'NextJS Doc Helper',
         type: 'RAG-based AI chat app',
@@ -18,7 +69,7 @@ export const projectsData: ProjectsDataType[] = [
         tech: ['Python', 'LangChain', 'Streamlit', 'Tavily', 'OpenAI API', 'Pinecone'],
 
         overview: "RAG Documentation Helper is an AI-powered chat assistant for answering questions about Next.js. Instead of relying on general training knowledge, it queries pre-scraped Next.js documentation embedded and stored in a Pinecone vector database, grounding every answer in accurate source material. \nThe agent uses a RAG + ReAct loop, deciding intelligently when retrieval is actually needed rather than fetching context on every query. Every response also surfaces its source attribution directly in the chat, giving users full transparency into where the information comes from. The interface is built with Streamlit.",
-        
+
         feature: [
             'Chat interface for querying Next.js documentation',
             'RAG + ReAct loop for context-aware, on-demand retrieval',
