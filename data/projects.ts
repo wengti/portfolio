@@ -4,7 +4,57 @@ export const projectsData: ProjectsDataType[] = [
 
     {
         isFeatured: true,
-        featuredRank: 3,
+        featuredRank: 0,
+        filename: 'Toki-Pitcher',
+        name: 'Toki Pitcher',
+        type: 'AI-powered retention agent tool',
+        year: 2026,
+        liveSite: 'http://44.200.59.154',
+        gitHub: 'https://github.com/wengti/toki-pitcher',
+        demo: 'https://youtu.be/q-TezmCFfdw',
+
+        description: 'Toki Pitcher is a retention agent tool for a fictional broadband provider, Toki Internet. It browses expiring customer contracts and generates personalised recontract pitches using an OpenAI LLM. The backend uses LangChain to build a prompt pipeline that analyses each customer\'s usage behaviour against their current plan and recommends an appropriate tier, before producing a structured, human-like pitch tailored to their tenure and usage profile.',
+
+        tech: ['Next.js', 'TypeScript', 'TailwindCSS', 'FastAPI', 'LangChain', 'OpenAI', 'Supabase'],
+
+        overview: "Toki Pitcher is a retention agent dashboard for Toki Internet (a fictional broadband provider). It surfaces all 50 customers with expiring contracts and allows agents to generate personalised recontract pitches with a single click.\n\nThe backend analyses each customer's monthly broadband usage against plan-tier thresholds to determine whether to recommend an upgrade, downgrade, or renewal of the same tier. That recommendation, along with customer and plan details, is fed through a LangChain prompt pipeline to an OpenAI LLM, which produces a structured, human-toned pitch. The generated pitch is persisted in Supabase and returned to the frontend to update the UI immediately without a page refresh.\n\nThe frontend is built with Next.js and TailwindCSS, leveraging Server Components for initial data fetching and Client Components only where user interactivity is needed. The full stack is deployed on a single AWS EC2 instance behind Nginx, which routes traffic between the Next.js frontend on port 3000 and the FastAPI backend on port 8000.",
+
+        feature: [
+            'Customer dashboard displaying all contracts with a toggle to filter those expiring this month',
+            'Rule-based plan recommendation engine that decides upgrade, downgrade, or renewal based on monthly usage vs. plan-tier thresholds',
+            'LangChain-powered pitch generation pipeline that produces personalised, structured recontract pitches via OpenAI',
+            'Pitch persistence in Supabase so generated pitches survive page refreshes',
+            'Optimistic frontend state update — pitch is displayed immediately without hitting the database again',
+            'Server Component architecture to minimise client-side workload, with Client Components scoped to interactive elements only',
+        ],
+
+        fullTech: {
+            language: 'TypeScript / Python',
+            frontend: 'Next.js + TailwindCSS',
+            backend: 'FastAPI',
+            AI: 'LangChain + OpenAI',
+            database: 'Supabase',
+            deployment: 'AWS EC2 (Nginx + PM2)',
+        },
+
+        challenges: [
+            'Keeping pitch recommendations grounded in usage data rather than leaving the tier decision entirely to the LLM, which is less predictable',
+            'Minimising client-side JavaScript load while still supporting interactive per-customer actions across a 50-customer grid',
+            'Persisting generated pitches to the database without blocking the UI or requiring a page refresh to display results',
+            'Deploying a full-stack app with both a Next.js frontend and FastAPI backend on a single EC2 instance with a unified base URL',
+        ],
+
+        solutions: [
+            'Implemented a deterministic rule-based recommender on the backend that maps monthly usage (GB) to plan tiers before invoking the LLM, ensuring the upgrade/downgrade/maintain decision is reliable and the LLM is only responsible for tone and phrasing.',
+            'Adopted a Next.js Server Component architecture where the top-level ContentHome component fetches all customer data server-side. Only CustomerHome and CustomerBox, which handle filtering and pitch interactions, are Client Components, keeping the client bundle lean.',
+            'After the backend generates and persists the pitch to Supabase, it returns the pitch text in the API response. The frontend updates React state directly from the response, so the pitch renders immediately without a secondary database read or page reload.',
+            'Configured Nginx on the EC2 instance as a reverse proxy that routes requests from port 80 to either the Next.js app (port 3000) or the FastAPI backend (port 8000) under the `/api/` path, giving both services a single public URL with PM2 managing process persistence.',
+        ],
+    },
+
+    {
+        isFeatured: true,
+        featuredRank: 1,
         filename: 'Github-Note-Helper',
         name: 'GitHub Note Helper',
         type: 'RAG-based AI chat app',
@@ -256,7 +306,7 @@ export const projectsData: ProjectsDataType[] = [
 
     {
         isFeatured: true,
-        featuredRank: 0,
+        featuredRank: 3,
         filename: 'Skorbot',
         name: 'Skorbot',
         type: 'Full-stack web app',
@@ -299,7 +349,7 @@ export const projectsData: ProjectsDataType[] = [
 
     {
         isFeatured: true,
-        featuredRank: 1,
+        featuredRank: 4,
         filename: 'Pickaboru',
         name: 'Pickaboru',
         type: 'Full-stack web app',
@@ -580,7 +630,7 @@ export const projectsData: ProjectsDataType[] = [
 
     {
         isFeatured: true,
-        featuredRank: 4,
+        featuredRank: 5,
         filename: 'FYP',
         name: 'Cost Effective Fault Detection on Solar Panel using YOLO',
         type: 'Research',
@@ -636,8 +686,8 @@ export const projectsData: ProjectsDataType[] = [
         ]
     },
     {
-        isFeatured: true,
-        featuredRank: 5,
+        isFeatured: false,
+        featuredRank: 0,
         filename: 'EEGP',
         name: 'Revolutionizing Transportation: A Passenger-Carrying Drone',
         type: 'Engineering group project',
