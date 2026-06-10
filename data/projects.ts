@@ -1,9 +1,59 @@
 import { ProjectsDataType } from "@/type/type";
 
 export const projectsData: ProjectsDataType[] = [
-
     {
         isFeatured: true,
+        featuredRank: 0,
+        filename: 'X-Tracker',
+        name: 'X Tracker',
+        type: 'Beyblade X battle tracking & analytics tool',
+        year: 2026,
+        liveSite: 'http://54.210.231.44/',
+        gitHub: 'https://github.com/wengti/x-tracker',
+        demo: 'https://www.youtube.com/watch?v=jagw5ZUJa2I',
+
+        description: 'X Tracker is a battle tracking tool for Beyblade X players to log matches, analyse Bey performance, and review personal statistics across 1v1 and 3v3 formats. The backend is built with Go and the Gin framework, secured with JWT authentication stored in httpOnly cookies and a Redis-based token blocklist for safe session invalidation.',
+
+        tech: ['Next.js', 'TypeScript', 'TailwindCSS', 'Go', 'Gin', 'Redis', 'SQLite'],
+
+        overview: "X Tracker is a full-stack battle logging and analytics platform for competitive Beyblade X players. It supports both 1v1 individual matches and 3v3 team battles, recording round-by-round results based on finish types (Spin, Burst, Over, Extreme) and surfacing per-Bey win rates, opponent matchup breakdowns, and personal match history.\n\nThe backend is written in Go using the Gin framework. Authentication uses JWT tokens delivered via httpOnly cookies, with a Redis blocklist keyed on token IDs (jti) to handle logout invalidation — preventing revoked tokens from remaining usable until their natural expiry. Match and parts data is persisted in SQLite, which auto-seeds with 259 Beyblade parts on first run.\n\nThe frontend is built with Next.js and TailwindCSS. In production, all API calls use relative URLs routed by Nginx to the Go backend, avoiding any client-side exposure of backend addresses. The full stack runs on a single AWS EC2 instance with Nginx as a reverse proxy and PM2 managing process persistence.",
+
+        feature: [
+            '1v1 and 3v3 battle logger with round-by-round scoring based on Spin, Burst, Over, and Extreme finish types',
+            'Bey Stats module showing win rates, point averages, and per-opponent matchup breakdowns for each Blade + Bit combination',
+            'Player Stats dashboard with personal win rates, point averages, and paginated match history',
+            'Profile system for saving frequently-used Bey configurations for quick selection during match logging',
+            'JWT authentication via httpOnly cookies with a Redis blocklist for secure session invalidation on logout',
+            '7-part Bey customisation (Blade, Metal Blade, Over Blade, Assist Blade, Lock Chip, Ratchet, Bit) with CX assembly support',
+            'SQLite database auto-seeded with 259 Beyblade parts on first run, scraped from Beyblade Wiki',
+        ],
+
+        fullTech: {
+            language: 'TypeScript / Go',
+            frontend: 'Next.js + TailwindCSS',
+            backend: 'Go (Gin)',
+            auth: 'JWT + Redis blocklist',
+            database: 'SQLite',
+            deployment: 'AWS EC2 (Nginx + PM2)',
+        },
+
+        challenges: [
+            'Ensuring logged-out JWT tokens cannot be reused for the remainder of their validity window',
+            'Querying saved Bey configurations that span 7 part slots, all foreign-keyed into the same parts table',
+            'Keeping 1v1 and 3v3 statistics consistent when team matches decompose into individual rounds',
+            'Routing frontend API calls to the Go backend without exposing backend addresses in the client bundle',
+        ],
+
+        solutions: [
+            'Implemented a Redis-based JWT blocklist keyed on token IDs (jti) with a TTL matching the remaining JWT lifetime, so revoked tokens are rejected until they would have expired anyway and Redis auto-evicts them after that point.',
+            'Resolved the parts query by joining the same parts table 7 times with distinct aliases, one per part slot, so a single query returns a fully assembled Bey configuration without multiple round trips.',
+            'When recording a 3v3 match, the backend writes both the overall team result and each individual round as a 1v1 entry, keeping Bey Stats and Player Stats consistent across both battle formats.',
+            'In production, all frontend API calls use relative URLs. Nginx routes paths under /auth/, /parts, /matches/, /profile, and /stats to the Go backend on port 8080, while all other requests go to the Next.js frontend on port 3000, so no backend address is ever exposed to the client.',
+        ],
+    },
+
+    {
+        isFeatured: false,
         featuredRank: 0,
         filename: 'Toki-Pitcher',
         name: 'Toki Pitcher',
